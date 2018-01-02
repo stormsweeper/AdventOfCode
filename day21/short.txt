@@ -1,0 +1,20 @@
+../.# => ##./#../...
+.#./..#/### => #..#/..../..../#..#
+
+
+12
+34
+
+// swap lines
+34
+12
+
+// reverse each line
+21
+43
+
+// reverse each line
+// swap lines
+43
+21
+
