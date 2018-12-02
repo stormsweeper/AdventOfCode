@@ -1,2 +1,2 @@
-# AdventOfCode2017
-This repo is archived, and has been merged into https://github.com/stormsweeper/AdventOfCode
+# Advent Of Code
+Puzzles from [Advent Of Code](https://adventofcode.com/) and solutions by yours truly.
