@@ -61,4 +61,30 @@ $best_min = (array_keys($shifts[$best_guard]))[0];
 
 $score = $best_guard * $best_min;
 
-echo "{$best_guard} {$best_min} {$score}";
+echo "{$best_guard} {$best_min} {$score}\n";
+
+$most_freq_guard = 0;
+$most_freq_min = 0;
+$most_freq_count = 0;
+
+foreach ($shifts as $guard => $mins) {
+    // reverse sort by most freq mins
+    uasort(
+        $mins,
+        function($a, $b) {
+            return $b - $a;
+        }
+    );
+    $min = (array_keys($mins))[0];
+    if ($mins[$min] < $most_freq_count) {
+        continue;
+    }
+
+    $most_freq_count = $mins[$min];
+    $most_freq_min = $min;
+    $most_freq_guard = $guard;
+}
+
+$freq_score = $most_freq_min * $most_freq_guard;
+
+echo "{$most_freq_guard} {$most_freq_min} {$freq_score}\n";
