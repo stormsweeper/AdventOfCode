@@ -5,20 +5,16 @@ $boxids = array_map(
     file($argv[1])
 );
 
-while(count($boxids) < strlen($boxids[0])) {
-    $boxids = array_merge($boxids, $boxids);
-}
+$pair = null;
 
-$pair;
-usort(
-    $boxids,
-    function($a, $b) use (&$fancy_ops, &$pair) {
+foreach ($boxids as $a) {
+    foreach ($boxids as $b) {
         if (levenshtein($a, $b) === 1) {
             $pair = [$a, $b];
+            break 2;
         }
-        return $a <=> $b;
     }
-);
+}
 
 $common = array_map(
     function($a, $b) {
