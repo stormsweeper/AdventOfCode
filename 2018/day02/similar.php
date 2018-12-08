@@ -15,4 +15,14 @@ foreach ($boxids as $a) {
 
 echo "\n{$a}\n{$b}\n";
 
-echo implode('', array_intersect(str_split($a), str_split($b)));
+$common = array_map(
+    function($a, $b) {
+        if ($a === $b) {
+            return $a;
+        }
+        return false;
+    },
+    str_split($a),
+    str_split($b)
+);
+echo implode('', array_filter($common));
