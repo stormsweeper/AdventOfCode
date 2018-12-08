@@ -11,6 +11,25 @@ class LicenseNode {
         );
         return array_sum($child_sums) + array_sum($this->metadata);
     }
+
+    public function nodeValue() {
+        if (empty($this->children)) {
+            return array_sum($this->metadata);
+        }
+
+        $child_values = array_map(
+            function($ref) {
+                $pos = $ref - 1;
+                if (!isset($this->children[$pos])) {
+                    return 0;
+                }
+
+                return ($this->children[$pos])->nodeValue();
+            },
+            $this->metadata
+        );
+        return array_sum($child_values);
+    }
 }
 
 $input = file_get_contents($argv[1]);
@@ -37,5 +56,5 @@ function parseNode() {
 
 $tree = parseNode();
 
-echo $tree->metaSum();
+echo "metasum: {$tree->metaSum()}\nnode value: {$tree->nodeValue()}\n";
 
