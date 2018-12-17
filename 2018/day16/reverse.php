@@ -1,132 +1,6 @@
 <?php
 
-function possibilities($input, $opcode, $argA, $argB, $argC, $expected) {
-    $poss = [];
-
-    // the register-only ops go here
-    if ($argA < 4 && $argB < 4) {
-        // addr
-        $actual = $input;
-        $actual[$argC] = $input[$argA] + $input[$argB];
-        if ($expected === $actual) {
-            $poss[] = 'addr';
-        }
-
-        // mulr
-        $actual = $input;
-        $actual[$argC] = $input[$argA] * $input[$argB];
-        if ($expected === $actual) {
-            $poss[] = 'mulr';
-        }
-
-        // banr
-        $actual = $input;
-        $actual[$argC] = $input[$argA] & $input[$argB];
-        if ($expected === $actual) {
-            $poss[] = 'banr';
-        }
-
-        // borr
-        $actual = $input;
-        $actual[$argC] = $input[$argA] | $input[$argB];
-        if ($expected === $actual) {
-            $poss[] = 'borr';
-        }
-
-        // gtrr
-        $actual = $input;
-        $actual[$argC] = $input[$argA] > $input[$argB] ? 1 : 0;
-        if ($expected === $actual) {
-            $poss[] = 'gtrr';
-        }
-
-        // eqrr
-        $actual = $input;
-        $actual[$argC] = $input[$argA] === $input[$argB] ? 1 : 0;
-        if ($expected === $actual) {
-            $poss[] = 'eqrr';
-        }
-    }
-
-    // the ops that use a register for the first arg
-    if ($argA < 4) {
-        // addi
-        $actual = $input;
-        $actual[$argC] = $input[$argA] + $argB;
-        if ($expected === $actual) {
-            $poss[] = 'addi';
-        }
-
-        // muli
-        $actual = $input;
-        $actual[$argC] = $input[$argA] * $argB;
-        if ($expected === $actual) {
-            $poss[] = 'muli';
-        }
-
-        // bani
-        $actual = $input;
-        $actual[$argC] = $input[$argA] & $argB;
-        if ($expected === $actual) {
-            $poss[] = 'bani';
-        }
-
-        // bori
-        $actual = $input;
-        $actual[$argC] = $input[$argA] | $argB;
-        if ($expected === $actual) {
-            $poss[] = 'bori';
-        }
-
-        // gtri
-        $actual = $input;
-        $actual[$argC] = $input[$argA] > $argB ? 1 : 0;
-        if ($expected === $actual) {
-            $poss[] = 'gtri';
-        }
-
-        // eqri
-        $actual = $input;
-        $actual[$argC] = $input[$argA] === $argB ? 1 : 0;
-        if ($expected === $actual) {
-            $poss[] = 'eqri';
-        }
-
-        // setr
-        $actual = $input;
-        $actual[$argC] = $input[$argA];
-        if ($expected === $actual) {
-            $poss[] = 'setr';
-        }
-    }
-
-    // the ops that use a register for the second arg
-    if ($argB < 4) {
-        // gtir
-        $actual = $input;
-        $actual[$argC] = $argA > $input[$argB] ? 1 : 0;
-        if ($expected === $actual) {
-            $poss[] = 'gtir';
-        }
-
-        // eqir
-        $actual = $input;
-        $actual[$argC] = $argA === $input[$argB] ? 1 : 0;
-        if ($expected === $actual) {
-            $poss[] = 'eqir';
-        }
-    }
-
-    // this one is always possible
-        // seti
-        $actual = $input;
-        $actual[$argC] = $argA;
-        if ($expected === $actual) {
-            $poss[] = 'seti';
-        }
-
-    return $poss;
-}
+require_once __DIR__ . '/opcodes.php';
 
 $input = file_get_contents($argv[1]);
 
@@ -154,4 +28,41 @@ foreach ($tests as $test) {
 
 //print_r($opcode_possibilities);
 
-echo $indeterminate;
+echo "samples w/ >= 3 possible opcodes: {$indeterminate}\n";
+
+$opcodes = [];
+
+while (count($opcode_possibilities)) {
+    $definite = array_filter(
+        $opcode_possibilities,
+        function($poss) {
+            return count($poss) === 1;
+        }
+    );
+    $definite = array_map('array_pop', $definite);
+    // flipping as merging number indices causes them to be treated like a list, not a map
+    $opcodes = array_merge($opcodes, array_flip($definite));
+    $opcode_possibilities = array_diff_key($opcode_possibilities, $definite);
+    $opcode_possibilities = array_map(
+        function($poss) use ($definite) {
+            return array_diff($poss, $definite);
+        },
+        $opcode_possibilities
+    );
+}
+
+$opcodes = array_flip($opcodes);
+
+[, $program] = explode("\n\n\n\n", $input);
+$program = explode("\n", trim($program));
+
+$registers = [0,0,0,0];
+//echo 'REG: ' . json_encode($registers) . "\n";
+foreach ($program as $line) {
+    [$opcode, $argA, $argB, $argC] = array_map('intval', explode(' ', $line));
+    $registers = performOp($registers, $opcodes[$opcode], $argA, $argB, $argC);
+    //echo "{$opcodes[$opcode]} {$argA} {$argB} {$argC}\n";
+    //echo 'REG: ' . json_encode($registers) . "\n";
+}
+
+print_r($registers);
