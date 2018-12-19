@@ -1,0 +1,3698 @@
+removing elf4 at 10,10
+Turn: 650 rounds: 21 last turn by goblin9
+################################
+##########.###.###..############
+##########..##......############
+#########...##....##############
+######.....###......############
+##########..........############
+##########.............#########
+#######...#.....#......#########
+#...##....##..#..#....#...######
+##......###..##..####.#..#######
+#.....#..#....#.###...GGE#######
+#.......##.......G..GGEE..######
+#.............#####.EE.....#####
+#####G.G.#...#######........####
+####GE#.....#########.......####
+#....G..G.#.#########......#####
+#.##..G.....#########.......####
+######......#########........###
+######.G..G.#########....#....##
+#######..G.GE#######..........##
+#######.GEG...#####............#
+#######..G.GE..................#
+####......G.....##............##
+####............##............##
+####....#.....####....##....#.##
+#######.......####...####..#####
+########.........########..#####
+##########.......#########...###
+##########.......#########..####
+##########....############..####
+###########...##################
+################################
+Array
+(
+    [goblin1] => Goblin Object
+        (
+            [id:protected] => goblin1
+            [pos_x:protected] => 22
+            [pos_y:protected] => 10
+            [attack_power:protected] => 3
+            [hit_points:protected] => 158
+        )
+
+    [goblin8] => Goblin Object
+        (
+            [id:protected] => goblin8
+            [pos_x:protected] => 23
+            [pos_y:protected] => 10
+            [attack_power:protected] => 3
+            [hit_points:protected] => 74
+        )
+
+    [elf1] => Elf Object
+        (
+            [id:protected] => elf1
+            [pos_x:protected] => 24
+            [pos_y:protected] => 10
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin2] => Goblin Object
+        (
+            [id:protected] => goblin2
+            [pos_x:protected] => 17
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin0] => Goblin Object
+        (
+            [id:protected] => goblin0
+            [pos_x:protected] => 20
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 188
+        )
+
+    [goblin5] => Goblin Object
+        (
+            [id:protected] => goblin5
+            [pos_x:protected] => 21
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 164
+        )
+
+    [elf3] => Elf Object
+        (
+            [id:protected] => elf3
+            [pos_x:protected] => 22
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 119
+        )
+
+    [elf0] => Elf Object
+        (
+            [id:protected] => elf0
+            [pos_x:protected] => 23
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 137
+        )
+
+    [elf7] => Elf Object
+        (
+            [id:protected] => elf7
+            [pos_x:protected] => 20
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 191
+        )
+
+    [elf6] => Elf Object
+        (
+            [id:protected] => elf6
+            [pos_x:protected] => 21
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin12] => Goblin Object
+        (
+            [id:protected] => goblin12
+            [pos_x:protected] => 5
+            [pos_y:protected] => 13
+            [attack_power:protected] => 3
+            [hit_points:protected] => 134
+        )
+
+    [goblin6] => Goblin Object
+        (
+            [id:protected] => goblin6
+            [pos_x:protected] => 7
+            [pos_y:protected] => 13
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin14] => Goblin Object
+        (
+            [id:protected] => goblin14
+            [pos_x:protected] => 4
+            [pos_y:protected] => 14
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [elf2] => Elf Object
+        (
+            [id:protected] => elf2
+            [pos_x:protected] => 5
+            [pos_y:protected] => 14
+            [attack_power:protected] => 3
+            [hit_points:protected] => 11
+        )
+
+    [goblin4] => Goblin Object
+        (
+            [id:protected] => goblin4
+            [pos_x:protected] => 8
+            [pos_y:protected] => 15
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin13] => Goblin Object
+        (
+            [id:protected] => goblin13
+            [pos_x:protected] => 5
+            [pos_y:protected] => 15
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin7] => Goblin Object
+        (
+            [id:protected] => goblin7
+            [pos_x:protected] => 6
+            [pos_y:protected] => 16
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin3] => Goblin Object
+        (
+            [id:protected] => goblin3
+            [pos_x:protected] => 7
+            [pos_y:protected] => 18
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin10] => Goblin Object
+        (
+            [id:protected] => goblin10
+            [pos_x:protected] => 10
+            [pos_y:protected] => 18
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin9] => Goblin Object
+        (
+            [id:protected] => goblin9
+            [pos_x:protected] => 9
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin15] => Goblin Object
+        (
+            [id:protected] => goblin15
+            [pos_x:protected] => 11
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 92
+        )
+
+    [elf9] => Elf Object
+        (
+            [id:protected] => elf9
+            [pos_x:protected] => 12
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin17] => Goblin Object
+        (
+            [id:protected] => goblin17
+            [pos_x:protected] => 8
+            [pos_y:protected] => 20
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [elf5] => Elf Object
+        (
+            [id:protected] => elf5
+            [pos_x:protected] => 9
+            [pos_y:protected] => 20
+            [attack_power:protected] => 3
+            [hit_points:protected] => 98
+        )
+
+    [goblin16] => Goblin Object
+        (
+            [id:protected] => goblin16
+            [pos_x:protected] => 10
+            [pos_y:protected] => 20
+            [attack_power:protected] => 3
+            [hit_points:protected] => 140
+        )
+
+    [goblin19] => Goblin Object
+        (
+            [id:protected] => goblin19
+            [pos_x:protected] => 9
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin18] => Goblin Object
+        (
+            [id:protected] => goblin18
+            [pos_x:protected] => 11
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 161
+        )
+
+    [elf8] => Elf Object
+        (
+            [id:protected] => elf8
+            [pos_x:protected] => 12
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 164
+        )
+
+    [goblin11] => Goblin Object
+        (
+            [id:protected] => goblin11
+            [pos_x:protected] => 10
+            [pos_y:protected] => 22
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+)
+removing elf2 at 5,5
+Turn: 690 rounds: 23 last turn by goblin12
+################################
+##########.###.###..############
+##########..##......############
+#########...##....##############
+######.....###......############
+##########..........############
+##########.............#########
+#######...#.....#......#########
+#...##....##..#..#....#...######
+##......###..##..####.#..#######
+#.....#..#....#.###...GGE#######
+#.......##.........GGGEE..######
+#.............#####.EE.....#####
+#####G...#...#######........####
+####G.#G....#########.......####
+#....G....#.#########......#####
+#.##...GG...#########.......####
+######....G.#########........###
+######......#########....#....##
+#######G.G.GE#######..........##
+#######.GEG...#####............#
+#######..G.GE..................#
+####.......G....##............##
+####............##............##
+####....#.....####....##....#.##
+#######.......####...####..#####
+########.........########..#####
+##########.......#########...###
+##########.......#########..####
+##########....############..####
+###########...##################
+################################
+Array
+(
+    [goblin1] => Goblin Object
+        (
+            [id:protected] => goblin1
+            [pos_x:protected] => 22
+            [pos_y:protected] => 10
+            [attack_power:protected] => 3
+            [hit_points:protected] => 152
+        )
+
+    [goblin8] => Goblin Object
+        (
+            [id:protected] => goblin8
+            [pos_x:protected] => 23
+            [pos_y:protected] => 10
+            [attack_power:protected] => 3
+            [hit_points:protected] => 62
+        )
+
+    [elf1] => Elf Object
+        (
+            [id:protected] => elf1
+            [pos_x:protected] => 24
+            [pos_y:protected] => 10
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin2] => Goblin Object
+        (
+            [id:protected] => goblin2
+            [pos_x:protected] => 19
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin0] => Goblin Object
+        (
+            [id:protected] => goblin0
+            [pos_x:protected] => 20
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 182
+        )
+
+    [goblin5] => Goblin Object
+        (
+            [id:protected] => goblin5
+            [pos_x:protected] => 21
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 158
+        )
+
+    [elf3] => Elf Object
+        (
+            [id:protected] => elf3
+            [pos_x:protected] => 22
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 107
+        )
+
+    [elf0] => Elf Object
+        (
+            [id:protected] => elf0
+            [pos_x:protected] => 23
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 131
+        )
+
+    [elf7] => Elf Object
+        (
+            [id:protected] => elf7
+            [pos_x:protected] => 20
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 185
+        )
+
+    [elf6] => Elf Object
+        (
+            [id:protected] => elf6
+            [pos_x:protected] => 21
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin12] => Goblin Object
+        (
+            [id:protected] => goblin12
+            [pos_x:protected] => 5
+            [pos_y:protected] => 13
+            [attack_power:protected] => 3
+            [hit_points:protected] => 131
+        )
+
+    [goblin14] => Goblin Object
+        (
+            [id:protected] => goblin14
+            [pos_x:protected] => 4
+            [pos_y:protected] => 14
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin6] => Goblin Object
+        (
+            [id:protected] => goblin6
+            [pos_x:protected] => 7
+            [pos_y:protected] => 14
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin13] => Goblin Object
+        (
+            [id:protected] => goblin13
+            [pos_x:protected] => 5
+            [pos_y:protected] => 15
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin7] => Goblin Object
+        (
+            [id:protected] => goblin7
+            [pos_x:protected] => 7
+            [pos_y:protected] => 16
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin4] => Goblin Object
+        (
+            [id:protected] => goblin4
+            [pos_x:protected] => 8
+            [pos_y:protected] => 16
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin10] => Goblin Object
+        (
+            [id:protected] => goblin10
+            [pos_x:protected] => 10
+            [pos_y:protected] => 17
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin3] => Goblin Object
+        (
+            [id:protected] => goblin3
+            [pos_x:protected] => 7
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin9] => Goblin Object
+        (
+            [id:protected] => goblin9
+            [pos_x:protected] => 9
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin15] => Goblin Object
+        (
+            [id:protected] => goblin15
+            [pos_x:protected] => 11
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 89
+        )
+
+    [elf9] => Elf Object
+        (
+            [id:protected] => elf9
+            [pos_x:protected] => 12
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 197
+        )
+
+    [goblin17] => Goblin Object
+        (
+            [id:protected] => goblin17
+            [pos_x:protected] => 8
+            [pos_y:protected] => 20
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [elf5] => Elf Object
+        (
+            [id:protected] => elf5
+            [pos_x:protected] => 9
+            [pos_y:protected] => 20
+            [attack_power:protected] => 3
+            [hit_points:protected] => 86
+        )
+
+    [goblin16] => Goblin Object
+        (
+            [id:protected] => goblin16
+            [pos_x:protected] => 10
+            [pos_y:protected] => 20
+            [attack_power:protected] => 3
+            [hit_points:protected] => 137
+        )
+
+    [goblin19] => Goblin Object
+        (
+            [id:protected] => goblin19
+            [pos_x:protected] => 9
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin18] => Goblin Object
+        (
+            [id:protected] => goblin18
+            [pos_x:protected] => 11
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 158
+        )
+
+    [elf8] => Elf Object
+        (
+            [id:protected] => elf8
+            [pos_x:protected] => 12
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 161
+        )
+
+    [goblin11] => Goblin Object
+        (
+            [id:protected] => goblin11
+            [pos_x:protected] => 11
+            [pos_y:protected] => 22
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+)
+removing elf5 at 9,9
+Turn: 904 rounds: 31 last turn by goblin9
+################################
+##########.###.###..############
+##########..##......############
+#########...##....##############
+######.....###......############
+##########..........############
+##########.............#########
+#######...#.....#......#########
+#...##....##..#..#....#...######
+##......###..##..####.#..#######
+#.....#..#....#.###...GGE#######
+#.......##..........GGEE..######
+#.............#####GEE.....#####
+#####G...#...#######........####
+####..#.....#########.......####
+#....G..G.#.#########......#####
+#.##..G.....#########.......####
+######...G..#########........###
+######..G...#########....#....##
+#######..G.GE#######..........##
+#######GG.G...#####............#
+#######..G.GE..................#
+####.......GG...##............##
+####............##............##
+####....#.....####....##....#.##
+#######.......####...####..#####
+########.........########..#####
+##########.......#########...###
+##########.......#########..####
+##########....############..####
+###########...##################
+################################
+Array
+(
+    [goblin1] => Goblin Object
+        (
+            [id:protected] => goblin1
+            [pos_x:protected] => 22
+            [pos_y:protected] => 10
+            [attack_power:protected] => 3
+            [hit_points:protected] => 128
+        )
+
+    [goblin8] => Goblin Object
+        (
+            [id:protected] => goblin8
+            [pos_x:protected] => 23
+            [pos_y:protected] => 10
+            [attack_power:protected] => 3
+            [hit_points:protected] => 14
+        )
+
+    [elf1] => Elf Object
+        (
+            [id:protected] => elf1
+            [pos_x:protected] => 24
+            [pos_y:protected] => 10
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin0] => Goblin Object
+        (
+            [id:protected] => goblin0
+            [pos_x:protected] => 20
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 158
+        )
+
+    [goblin5] => Goblin Object
+        (
+            [id:protected] => goblin5
+            [pos_x:protected] => 21
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 134
+        )
+
+    [elf3] => Elf Object
+        (
+            [id:protected] => elf3
+            [pos_x:protected] => 22
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 59
+        )
+
+    [elf0] => Elf Object
+        (
+            [id:protected] => elf0
+            [pos_x:protected] => 23
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 107
+        )
+
+    [goblin2] => Goblin Object
+        (
+            [id:protected] => goblin2
+            [pos_x:protected] => 19
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [elf7] => Elf Object
+        (
+            [id:protected] => elf7
+            [pos_x:protected] => 20
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 137
+        )
+
+    [elf6] => Elf Object
+        (
+            [id:protected] => elf6
+            [pos_x:protected] => 21
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin12] => Goblin Object
+        (
+            [id:protected] => goblin12
+            [pos_x:protected] => 5
+            [pos_y:protected] => 13
+            [attack_power:protected] => 3
+            [hit_points:protected] => 131
+        )
+
+    [goblin14] => Goblin Object
+        (
+            [id:protected] => goblin14
+            [pos_x:protected] => 5
+            [pos_y:protected] => 15
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin6] => Goblin Object
+        (
+            [id:protected] => goblin6
+            [pos_x:protected] => 8
+            [pos_y:protected] => 15
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin13] => Goblin Object
+        (
+            [id:protected] => goblin13
+            [pos_x:protected] => 6
+            [pos_y:protected] => 16
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin10] => Goblin Object
+        (
+            [id:protected] => goblin10
+            [pos_x:protected] => 9
+            [pos_y:protected] => 17
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin4] => Goblin Object
+        (
+            [id:protected] => goblin4
+            [pos_x:protected] => 8
+            [pos_y:protected] => 18
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin9] => Goblin Object
+        (
+            [id:protected] => goblin9
+            [pos_x:protected] => 9
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin15] => Goblin Object
+        (
+            [id:protected] => goblin15
+            [pos_x:protected] => 11
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 68
+        )
+
+    [elf9] => Elf Object
+        (
+            [id:protected] => elf9
+            [pos_x:protected] => 12
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 176
+        )
+
+    [goblin7] => Goblin Object
+        (
+            [id:protected] => goblin7
+            [pos_x:protected] => 7
+            [pos_y:protected] => 20
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin17] => Goblin Object
+        (
+            [id:protected] => goblin17
+            [pos_x:protected] => 8
+            [pos_y:protected] => 20
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin16] => Goblin Object
+        (
+            [id:protected] => goblin16
+            [pos_x:protected] => 10
+            [pos_y:protected] => 20
+            [attack_power:protected] => 3
+            [hit_points:protected] => 116
+        )
+
+    [goblin19] => Goblin Object
+        (
+            [id:protected] => goblin19
+            [pos_x:protected] => 9
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin18] => Goblin Object
+        (
+            [id:protected] => goblin18
+            [pos_x:protected] => 11
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 137
+        )
+
+    [elf8] => Elf Object
+        (
+            [id:protected] => elf8
+            [pos_x:protected] => 12
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 119
+        )
+
+    [goblin3] => Goblin Object
+        (
+            [id:protected] => goblin3
+            [pos_x:protected] => 11
+            [pos_y:protected] => 22
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin11] => Goblin Object
+        (
+            [id:protected] => goblin11
+            [pos_x:protected] => 12
+            [pos_y:protected] => 22
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+)
+removing goblin8 at 23,23
+Turn: 965 rounds: 34 last turn by elf1
+################################
+##########.###.###..############
+##########..##......############
+#########...##....##############
+######.....###......############
+##########..........############
+##########.............#########
+#######...#.....#......#########
+#...##....##..#..#....#...######
+##......###..##..####.#..#######
+#.....#..#....#.###...GGE#######
+#.......##..........GGEE..######
+#.............#####GEE.....#####
+#####.G..#...#######........####
+####..#.....#########.......####
+#.....GG..#.#########......#####
+#.##...G....#########.......####
+######....G.#########........###
+######......#########....#....##
+#######.G..GE#######..........##
+#######..G..G.#####............#
+#######....GE..................#
+####.....GG.G...##............##
+####...G....G...##............##
+####....#.....####....##....#.##
+#######.......####...####..#####
+########.........########..#####
+##########.......#########...###
+##########.......#########..####
+##########....############..####
+###########...##################
+################################
+Array
+(
+    [goblin1] => Goblin Object
+        (
+            [id:protected] => goblin1
+            [pos_x:protected] => 22
+            [pos_y:protected] => 10
+            [attack_power:protected] => 3
+            [hit_points:protected] => 122
+        )
+
+    [elf1] => Elf Object
+        (
+            [id:protected] => elf1
+            [pos_x:protected] => 24
+            [pos_y:protected] => 10
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin0] => Goblin Object
+        (
+            [id:protected] => goblin0
+            [pos_x:protected] => 20
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 152
+        )
+
+    [goblin5] => Goblin Object
+        (
+            [id:protected] => goblin5
+            [pos_x:protected] => 21
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 128
+        )
+
+    [elf3] => Elf Object
+        (
+            [id:protected] => elf3
+            [pos_x:protected] => 22
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 44
+        )
+
+    [elf0] => Elf Object
+        (
+            [id:protected] => elf0
+            [pos_x:protected] => 23
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 98
+        )
+
+    [goblin2] => Goblin Object
+        (
+            [id:protected] => goblin2
+            [pos_x:protected] => 19
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [elf7] => Elf Object
+        (
+            [id:protected] => elf7
+            [pos_x:protected] => 20
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 125
+        )
+
+    [elf6] => Elf Object
+        (
+            [id:protected] => elf6
+            [pos_x:protected] => 21
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin12] => Goblin Object
+        (
+            [id:protected] => goblin12
+            [pos_x:protected] => 6
+            [pos_y:protected] => 13
+            [attack_power:protected] => 3
+            [hit_points:protected] => 131
+        )
+
+    [goblin14] => Goblin Object
+        (
+            [id:protected] => goblin14
+            [pos_x:protected] => 6
+            [pos_y:protected] => 15
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin6] => Goblin Object
+        (
+            [id:protected] => goblin6
+            [pos_x:protected] => 7
+            [pos_y:protected] => 15
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin13] => Goblin Object
+        (
+            [id:protected] => goblin13
+            [pos_x:protected] => 7
+            [pos_y:protected] => 16
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin10] => Goblin Object
+        (
+            [id:protected] => goblin10
+            [pos_x:protected] => 10
+            [pos_y:protected] => 17
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin4] => Goblin Object
+        (
+            [id:protected] => goblin4
+            [pos_x:protected] => 8
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin15] => Goblin Object
+        (
+            [id:protected] => goblin15
+            [pos_x:protected] => 11
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 59
+        )
+
+    [elf9] => Elf Object
+        (
+            [id:protected] => elf9
+            [pos_x:protected] => 12
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 167
+        )
+
+    [goblin9] => Goblin Object
+        (
+            [id:protected] => goblin9
+            [pos_x:protected] => 9
+            [pos_y:protected] => 20
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin16] => Goblin Object
+        (
+            [id:protected] => goblin16
+            [pos_x:protected] => 12
+            [pos_y:protected] => 20
+            [attack_power:protected] => 3
+            [hit_points:protected] => 113
+        )
+
+    [goblin18] => Goblin Object
+        (
+            [id:protected] => goblin18
+            [pos_x:protected] => 11
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 134
+        )
+
+    [elf8] => Elf Object
+        (
+            [id:protected] => elf8
+            [pos_x:protected] => 12
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 104
+        )
+
+    [goblin17] => Goblin Object
+        (
+            [id:protected] => goblin17
+            [pos_x:protected] => 9
+            [pos_y:protected] => 22
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin19] => Goblin Object
+        (
+            [id:protected] => goblin19
+            [pos_x:protected] => 10
+            [pos_y:protected] => 22
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin11] => Goblin Object
+        (
+            [id:protected] => goblin11
+            [pos_x:protected] => 12
+            [pos_y:protected] => 22
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin7] => Goblin Object
+        (
+            [id:protected] => goblin7
+            [pos_x:protected] => 7
+            [pos_y:protected] => 23
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin3] => Goblin Object
+        (
+            [id:protected] => goblin3
+            [pos_x:protected] => 12
+            [pos_y:protected] => 23
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+)
+removing elf3 at 22,22
+Turn: 1149 rounds: 41 last turn by goblin5
+################################
+##########.###.###..############
+##########..##......############
+#########...##....##############
+######.....###......############
+##########..........############
+##########.............#########
+#######...#.....#......#########
+#...##....##..#..#....#...######
+##......###..##..####.#..#######
+#.....#..#....#.###...GE.#######
+#.......##..........GG....######
+#.............#####GEE.....#####
+#####....#...#######.E......####
+####..#.....#########.......####
+#....G....#.#########......#####
+#.##........#########.......####
+######....G.#########........###
+######......#########....#....##
+#######G...GE#######..........##
+#######.G...G.#####............#
+#######G.G.GEG.................#
+####........G.G.##............##
+####.......G....##............##
+####....#GG...####....##....#.##
+#######.......####...####..#####
+########.........########..#####
+##########.......#########...###
+##########.......#########..####
+##########....############..####
+###########...##################
+################################
+Array
+(
+    [goblin1] => Goblin Object
+        (
+            [id:protected] => goblin1
+            [pos_x:protected] => 22
+            [pos_y:protected] => 10
+            [attack_power:protected] => 3
+            [hit_points:protected] => 77
+        )
+
+    [elf0] => Elf Object
+        (
+            [id:protected] => elf0
+            [pos_x:protected] => 23
+            [pos_y:protected] => 10
+            [attack_power:protected] => 3
+            [hit_points:protected] => 98
+        )
+
+    [goblin0] => Goblin Object
+        (
+            [id:protected] => goblin0
+            [pos_x:protected] => 20
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 131
+        )
+
+    [goblin5] => Goblin Object
+        (
+            [id:protected] => goblin5
+            [pos_x:protected] => 21
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 107
+        )
+
+    [goblin2] => Goblin Object
+        (
+            [id:protected] => goblin2
+            [pos_x:protected] => 19
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [elf7] => Elf Object
+        (
+            [id:protected] => elf7
+            [pos_x:protected] => 20
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 80
+        )
+
+    [elf6] => Elf Object
+        (
+            [id:protected] => elf6
+            [pos_x:protected] => 21
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [elf1] => Elf Object
+        (
+            [id:protected] => elf1
+            [pos_x:protected] => 21
+            [pos_y:protected] => 13
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin12] => Goblin Object
+        (
+            [id:protected] => goblin12
+            [pos_x:protected] => 5
+            [pos_y:protected] => 15
+            [attack_power:protected] => 3
+            [hit_points:protected] => 131
+        )
+
+    [goblin6] => Goblin Object
+        (
+            [id:protected] => goblin6
+            [pos_x:protected] => 10
+            [pos_y:protected] => 17
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin14] => Goblin Object
+        (
+            [id:protected] => goblin14
+            [pos_x:protected] => 7
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin15] => Goblin Object
+        (
+            [id:protected] => goblin15
+            [pos_x:protected] => 11
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 38
+        )
+
+    [elf9] => Elf Object
+        (
+            [id:protected] => elf9
+            [pos_x:protected] => 12
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 146
+        )
+
+    [goblin13] => Goblin Object
+        (
+            [id:protected] => goblin13
+            [pos_x:protected] => 8
+            [pos_y:protected] => 20
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin16] => Goblin Object
+        (
+            [id:protected] => goblin16
+            [pos_x:protected] => 12
+            [pos_y:protected] => 20
+            [attack_power:protected] => 3
+            [hit_points:protected] => 92
+        )
+
+    [goblin4] => Goblin Object
+        (
+            [id:protected] => goblin4
+            [pos_x:protected] => 7
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin10] => Goblin Object
+        (
+            [id:protected] => goblin10
+            [pos_x:protected] => 9
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin18] => Goblin Object
+        (
+            [id:protected] => goblin18
+            [pos_x:protected] => 11
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 134
+        )
+
+    [elf8] => Elf Object
+        (
+            [id:protected] => elf8
+            [pos_x:protected] => 12
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 26
+        )
+
+    [goblin3] => Goblin Object
+        (
+            [id:protected] => goblin3
+            [pos_x:protected] => 13
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin11] => Goblin Object
+        (
+            [id:protected] => goblin11
+            [pos_x:protected] => 12
+            [pos_y:protected] => 22
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin19] => Goblin Object
+        (
+            [id:protected] => goblin19
+            [pos_x:protected] => 14
+            [pos_y:protected] => 22
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin9] => Goblin Object
+        (
+            [id:protected] => goblin9
+            [pos_x:protected] => 11
+            [pos_y:protected] => 23
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin7] => Goblin Object
+        (
+            [id:protected] => goblin7
+            [pos_x:protected] => 9
+            [pos_y:protected] => 24
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin17] => Goblin Object
+        (
+            [id:protected] => goblin17
+            [pos_x:protected] => 10
+            [pos_y:protected] => 24
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+)
+removing elf8 at 12,12
+Turn: 1213 rounds: 44 last turn by goblin16
+################################
+##########.###.###..############
+##########..##......############
+#########...##....##############
+######.....###......############
+##########..........############
+##########.............#########
+#######...#.....#......#########
+#...##....##..#..#....#...######
+##......###..##..####.#..#######
+#.....#..#....#.###...GE.#######
+#.......##..........GGE...######
+#.............#####GEE.....#####
+#####....#...#######........####
+####..#.....#########.......####
+#......G..#.#########......#####
+#.##........#########.......####
+######......#########........###
+######......#########....#....##
+#######..GGGE#######..........##
+#######.....G.#####............#
+#######..G.G.G.G...............#
+####...G.G..G...##............##
+####.....G..G...##............##
+####....#..G..####....##....#.##
+#######.......####...####..#####
+########.........########..#####
+##########.......#########...###
+##########.......#########..####
+##########....############..####
+###########...##################
+################################
+Array
+(
+    [goblin1] => Goblin Object
+        (
+            [id:protected] => goblin1
+            [pos_x:protected] => 22
+            [pos_y:protected] => 10
+            [attack_power:protected] => 3
+            [hit_points:protected] => 65
+        )
+
+    [elf0] => Elf Object
+        (
+            [id:protected] => elf0
+            [pos_x:protected] => 23
+            [pos_y:protected] => 10
+            [attack_power:protected] => 3
+            [hit_points:protected] => 89
+        )
+
+    [goblin0] => Goblin Object
+        (
+            [id:protected] => goblin0
+            [pos_x:protected] => 20
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 122
+        )
+
+    [goblin5] => Goblin Object
+        (
+            [id:protected] => goblin5
+            [pos_x:protected] => 21
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 98
+        )
+
+    [goblin2] => Goblin Object
+        (
+            [id:protected] => goblin2
+            [pos_x:protected] => 19
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [elf7] => Elf Object
+        (
+            [id:protected] => elf7
+            [pos_x:protected] => 20
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 62
+        )
+
+    [elf6] => Elf Object
+        (
+            [id:protected] => elf6
+            [pos_x:protected] => 21
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 191
+        )
+
+    [elf1] => Elf Object
+        (
+            [id:protected] => elf1
+            [pos_x:protected] => 22
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin12] => Goblin Object
+        (
+            [id:protected] => goblin12
+            [pos_x:protected] => 7
+            [pos_y:protected] => 15
+            [attack_power:protected] => 3
+            [hit_points:protected] => 131
+        )
+
+    [goblin14] => Goblin Object
+        (
+            [id:protected] => goblin14
+            [pos_x:protected] => 9
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin6] => Goblin Object
+        (
+            [id:protected] => goblin6
+            [pos_x:protected] => 10
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin15] => Goblin Object
+        (
+            [id:protected] => goblin15
+            [pos_x:protected] => 11
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 29
+        )
+
+    [elf9] => Elf Object
+        (
+            [id:protected] => elf9
+            [pos_x:protected] => 12
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 137
+        )
+
+    [goblin16] => Goblin Object
+        (
+            [id:protected] => goblin16
+            [pos_x:protected] => 12
+            [pos_y:protected] => 20
+            [attack_power:protected] => 3
+            [hit_points:protected] => 86
+        )
+
+    [goblin13] => Goblin Object
+        (
+            [id:protected] => goblin13
+            [pos_x:protected] => 9
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin18] => Goblin Object
+        (
+            [id:protected] => goblin18
+            [pos_x:protected] => 11
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 134
+        )
+
+    [goblin3] => Goblin Object
+        (
+            [id:protected] => goblin3
+            [pos_x:protected] => 13
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin19] => Goblin Object
+        (
+            [id:protected] => goblin19
+            [pos_x:protected] => 15
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin4] => Goblin Object
+        (
+            [id:protected] => goblin4
+            [pos_x:protected] => 7
+            [pos_y:protected] => 22
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin10] => Goblin Object
+        (
+            [id:protected] => goblin10
+            [pos_x:protected] => 9
+            [pos_y:protected] => 22
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin11] => Goblin Object
+        (
+            [id:protected] => goblin11
+            [pos_x:protected] => 12
+            [pos_y:protected] => 22
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin7] => Goblin Object
+        (
+            [id:protected] => goblin7
+            [pos_x:protected] => 9
+            [pos_y:protected] => 23
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin9] => Goblin Object
+        (
+            [id:protected] => goblin9
+            [pos_x:protected] => 12
+            [pos_y:protected] => 23
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin17] => Goblin Object
+        (
+            [id:protected] => goblin17
+            [pos_x:protected] => 11
+            [pos_y:protected] => 24
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+)
+removing goblin15 at 11,11
+Turn: 1445 rounds: 54 last turn by elf9
+################################
+##########.###.###..############
+##########..##......############
+#########...##....##############
+######.....###......############
+##########..........############
+##########.............#########
+#######...#.....#......#########
+#...##....##..#..#....#...######
+##......###..##..####.#..#######
+#.....#..#....#.###...GE.#######
+#.......##..........GGE...######
+#.............#####GEE.....#####
+#####....#...#######........####
+####..#.....#########.......####
+#......G..#.#########......#####
+#.##........#########.......####
+######......#########G.......###
+######......#########....#....##
+#######..GGGE#######..........##
+#######.....G.#####............#
+#######..G.G......G............#
+####......G...G.##............##
+####...G..G...G.##............##
+####....#..G..####....##....#.##
+#######.......####...####..#####
+########.........########..#####
+##########.......#########...###
+##########.......#########..####
+##########....############..####
+###########...##################
+################################
+Array
+(
+    [goblin1] => Goblin Object
+        (
+            [id:protected] => goblin1
+            [pos_x:protected] => 22
+            [pos_y:protected] => 10
+            [attack_power:protected] => 3
+            [hit_points:protected] => 5
+        )
+
+    [elf0] => Elf Object
+        (
+            [id:protected] => elf0
+            [pos_x:protected] => 23
+            [pos_y:protected] => 10
+            [attack_power:protected] => 3
+            [hit_points:protected] => 59
+        )
+
+    [goblin0] => Goblin Object
+        (
+            [id:protected] => goblin0
+            [pos_x:protected] => 20
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 92
+        )
+
+    [goblin5] => Goblin Object
+        (
+            [id:protected] => goblin5
+            [pos_x:protected] => 21
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 68
+        )
+
+    [elf1] => Elf Object
+        (
+            [id:protected] => elf1
+            [pos_x:protected] => 22
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin2] => Goblin Object
+        (
+            [id:protected] => goblin2
+            [pos_x:protected] => 19
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [elf7] => Elf Object
+        (
+            [id:protected] => elf7
+            [pos_x:protected] => 20
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 2
+        )
+
+    [elf6] => Elf Object
+        (
+            [id:protected] => elf6
+            [pos_x:protected] => 21
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 161
+        )
+
+    [goblin12] => Goblin Object
+        (
+            [id:protected] => goblin12
+            [pos_x:protected] => 7
+            [pos_y:protected] => 15
+            [attack_power:protected] => 3
+            [hit_points:protected] => 131
+        )
+
+    [goblin19] => Goblin Object
+        (
+            [id:protected] => goblin19
+            [pos_x:protected] => 21
+            [pos_y:protected] => 17
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin14] => Goblin Object
+        (
+            [id:protected] => goblin14
+            [pos_x:protected] => 9
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin6] => Goblin Object
+        (
+            [id:protected] => goblin6
+            [pos_x:protected] => 10
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [elf9] => Elf Object
+        (
+            [id:protected] => elf9
+            [pos_x:protected] => 12
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 80
+        )
+
+    [goblin16] => Goblin Object
+        (
+            [id:protected] => goblin16
+            [pos_x:protected] => 12
+            [pos_y:protected] => 20
+            [attack_power:protected] => 3
+            [hit_points:protected] => 86
+        )
+
+    [goblin13] => Goblin Object
+        (
+            [id:protected] => goblin13
+            [pos_x:protected] => 9
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin18] => Goblin Object
+        (
+            [id:protected] => goblin18
+            [pos_x:protected] => 11
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 134
+        )
+
+    [goblin3] => Goblin Object
+        (
+            [id:protected] => goblin3
+            [pos_x:protected] => 18
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin10] => Goblin Object
+        (
+            [id:protected] => goblin10
+            [pos_x:protected] => 10
+            [pos_y:protected] => 22
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin11] => Goblin Object
+        (
+            [id:protected] => goblin11
+            [pos_x:protected] => 14
+            [pos_y:protected] => 22
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin4] => Goblin Object
+        (
+            [id:protected] => goblin4
+            [pos_x:protected] => 7
+            [pos_y:protected] => 23
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin7] => Goblin Object
+        (
+            [id:protected] => goblin7
+            [pos_x:protected] => 10
+            [pos_y:protected] => 23
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin9] => Goblin Object
+        (
+            [id:protected] => goblin9
+            [pos_x:protected] => 14
+            [pos_y:protected] => 23
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin17] => Goblin Object
+        (
+            [id:protected] => goblin17
+            [pos_x:protected] => 11
+            [pos_y:protected] => 24
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+)
+removing elf7 at 20,20
+Turn: 1458 rounds: 55 last turn by goblin0
+################################
+##########.###.###..############
+##########..##......############
+#########...##....##############
+######.....###......############
+##########..........############
+##########.............#########
+#######...#.....#......#########
+#...##....##..#..#....#...######
+##......###..##..####.#..#######
+#.....#..#....#.###...GE.#######
+#.......##..........GGE...######
+#.............#####G.E.....#####
+#####....#...#######........####
+####..#.....#########.......####
+#......G..#.#########......#####
+#.##........#########.......####
+######......#########G.......###
+######......#########....#....##
+#######..GG.E#######..........##
+#######..G.GG.#####............#
+#######...G........G...........#
+####...G..G..G..##............##
+####.......G.G..##............##
+####....#.....####....##....#.##
+#######.......####...####..#####
+########.........########..#####
+##########.......#########...###
+##########.......#########..####
+##########....############..####
+###########...##################
+################################
+Array
+(
+    [goblin1] => Goblin Object
+        (
+            [id:protected] => goblin1
+            [pos_x:protected] => 22
+            [pos_y:protected] => 10
+            [attack_power:protected] => 3
+            [hit_points:protected] => 2
+        )
+
+    [elf0] => Elf Object
+        (
+            [id:protected] => elf0
+            [pos_x:protected] => 23
+            [pos_y:protected] => 10
+            [attack_power:protected] => 3
+            [hit_points:protected] => 56
+        )
+
+    [goblin0] => Goblin Object
+        (
+            [id:protected] => goblin0
+            [pos_x:protected] => 20
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 92
+        )
+
+    [goblin5] => Goblin Object
+        (
+            [id:protected] => goblin5
+            [pos_x:protected] => 21
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 68
+        )
+
+    [elf1] => Elf Object
+        (
+            [id:protected] => elf1
+            [pos_x:protected] => 22
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin2] => Goblin Object
+        (
+            [id:protected] => goblin2
+            [pos_x:protected] => 19
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [elf6] => Elf Object
+        (
+            [id:protected] => elf6
+            [pos_x:protected] => 21
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 161
+        )
+
+    [goblin12] => Goblin Object
+        (
+            [id:protected] => goblin12
+            [pos_x:protected] => 7
+            [pos_y:protected] => 15
+            [attack_power:protected] => 3
+            [hit_points:protected] => 131
+        )
+
+    [goblin19] => Goblin Object
+        (
+            [id:protected] => goblin19
+            [pos_x:protected] => 21
+            [pos_y:protected] => 17
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin14] => Goblin Object
+        (
+            [id:protected] => goblin14
+            [pos_x:protected] => 9
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin6] => Goblin Object
+        (
+            [id:protected] => goblin6
+            [pos_x:protected] => 10
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [elf9] => Elf Object
+        (
+            [id:protected] => elf9
+            [pos_x:protected] => 12
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 77
+        )
+
+    [goblin13] => Goblin Object
+        (
+            [id:protected] => goblin13
+            [pos_x:protected] => 9
+            [pos_y:protected] => 20
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin18] => Goblin Object
+        (
+            [id:protected] => goblin18
+            [pos_x:protected] => 11
+            [pos_y:protected] => 20
+            [attack_power:protected] => 3
+            [hit_points:protected] => 134
+        )
+
+    [goblin16] => Goblin Object
+        (
+            [id:protected] => goblin16
+            [pos_x:protected] => 12
+            [pos_y:protected] => 20
+            [attack_power:protected] => 3
+            [hit_points:protected] => 86
+        )
+
+    [goblin10] => Goblin Object
+        (
+            [id:protected] => goblin10
+            [pos_x:protected] => 10
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin3] => Goblin Object
+        (
+            [id:protected] => goblin3
+            [pos_x:protected] => 19
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin4] => Goblin Object
+        (
+            [id:protected] => goblin4
+            [pos_x:protected] => 7
+            [pos_y:protected] => 22
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin7] => Goblin Object
+        (
+            [id:protected] => goblin7
+            [pos_x:protected] => 10
+            [pos_y:protected] => 22
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin11] => Goblin Object
+        (
+            [id:protected] => goblin11
+            [pos_x:protected] => 13
+            [pos_y:protected] => 22
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin17] => Goblin Object
+        (
+            [id:protected] => goblin17
+            [pos_x:protected] => 11
+            [pos_y:protected] => 23
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin9] => Goblin Object
+        (
+            [id:protected] => goblin9
+            [pos_x:protected] => 13
+            [pos_y:protected] => 23
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+)
+removing goblin1 at 22,22
+Turn: 1460 rounds: 55 last turn by elf1
+################################
+##########.###.###..############
+##########..##......############
+#########...##....##############
+######.....###......############
+##########..........############
+##########.............#########
+#######...#.....#......#########
+#...##....##..#..#....#...######
+##......###..##..####.#..#######
+#.....#..#....#.###...GE.#######
+#.......##..........GGE...######
+#.............#####G.E.....#####
+#####....#...#######........####
+####..#.....#########.......####
+#......G..#.#########......#####
+#.##........#########.......####
+######......#########G.......###
+######......#########....#....##
+#######..GG.E#######..........##
+#######..G.GG.#####............#
+#######...G........G...........#
+####...G..G..G..##............##
+####.......G.G..##............##
+####....#.....####....##....#.##
+#######.......####...####..#####
+########.........########..#####
+##########.......#########...###
+##########.......#########..####
+##########....############..####
+###########...##################
+################################
+Array
+(
+    [elf0] => Elf Object
+        (
+            [id:protected] => elf0
+            [pos_x:protected] => 23
+            [pos_y:protected] => 10
+            [attack_power:protected] => 3
+            [hit_points:protected] => 56
+        )
+
+    [goblin0] => Goblin Object
+        (
+            [id:protected] => goblin0
+            [pos_x:protected] => 20
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 92
+        )
+
+    [goblin5] => Goblin Object
+        (
+            [id:protected] => goblin5
+            [pos_x:protected] => 21
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 68
+        )
+
+    [elf1] => Elf Object
+        (
+            [id:protected] => elf1
+            [pos_x:protected] => 22
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin2] => Goblin Object
+        (
+            [id:protected] => goblin2
+            [pos_x:protected] => 19
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [elf6] => Elf Object
+        (
+            [id:protected] => elf6
+            [pos_x:protected] => 21
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 158
+        )
+
+    [goblin12] => Goblin Object
+        (
+            [id:protected] => goblin12
+            [pos_x:protected] => 7
+            [pos_y:protected] => 15
+            [attack_power:protected] => 3
+            [hit_points:protected] => 131
+        )
+
+    [goblin19] => Goblin Object
+        (
+            [id:protected] => goblin19
+            [pos_x:protected] => 21
+            [pos_y:protected] => 17
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin14] => Goblin Object
+        (
+            [id:protected] => goblin14
+            [pos_x:protected] => 9
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin6] => Goblin Object
+        (
+            [id:protected] => goblin6
+            [pos_x:protected] => 10
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [elf9] => Elf Object
+        (
+            [id:protected] => elf9
+            [pos_x:protected] => 12
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 77
+        )
+
+    [goblin13] => Goblin Object
+        (
+            [id:protected] => goblin13
+            [pos_x:protected] => 9
+            [pos_y:protected] => 20
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin18] => Goblin Object
+        (
+            [id:protected] => goblin18
+            [pos_x:protected] => 11
+            [pos_y:protected] => 20
+            [attack_power:protected] => 3
+            [hit_points:protected] => 134
+        )
+
+    [goblin16] => Goblin Object
+        (
+            [id:protected] => goblin16
+            [pos_x:protected] => 12
+            [pos_y:protected] => 20
+            [attack_power:protected] => 3
+            [hit_points:protected] => 86
+        )
+
+    [goblin10] => Goblin Object
+        (
+            [id:protected] => goblin10
+            [pos_x:protected] => 10
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin3] => Goblin Object
+        (
+            [id:protected] => goblin3
+            [pos_x:protected] => 19
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin4] => Goblin Object
+        (
+            [id:protected] => goblin4
+            [pos_x:protected] => 7
+            [pos_y:protected] => 22
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin7] => Goblin Object
+        (
+            [id:protected] => goblin7
+            [pos_x:protected] => 10
+            [pos_y:protected] => 22
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin11] => Goblin Object
+        (
+            [id:protected] => goblin11
+            [pos_x:protected] => 13
+            [pos_y:protected] => 22
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin17] => Goblin Object
+        (
+            [id:protected] => goblin17
+            [pos_x:protected] => 11
+            [pos_y:protected] => 23
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin9] => Goblin Object
+        (
+            [id:protected] => goblin9
+            [pos_x:protected] => 13
+            [pos_y:protected] => 23
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+)
+removing goblin5 at 21,21
+Turn: 1696 rounds: 67 last turn by elf1
+################################
+##########.###.###..############
+##########..##......############
+#########...##....##############
+######.....###......############
+##########..........############
+##########.............#########
+#######...#.....#......#########
+#...##....##..#..#....#...######
+##......###..##..####.#..#######
+#.....#..#....#.###..GE..#######
+#.......##...........GE...######
+#.............#####.GE.....#####
+#####....#...#######.GG.....####
+####..#.....#########.......####
+#.........#.#########......#####
+#.##...G....#########.......####
+######......#########........###
+######......#########....#....##
+#######.G..GE#######.G........##
+#######...G.G.#####............#
+#######..G.G......G............#
+####......GG.G..##............##
+####............##............##
+####....#.....####....##....#.##
+#######.......####...####..#####
+########.........########..#####
+##########.......#########...###
+##########.......#########..####
+##########....############..####
+###########...##################
+################################
+Array
+(
+    [goblin0] => Goblin Object
+        (
+            [id:protected] => goblin0
+            [pos_x:protected] => 21
+            [pos_y:protected] => 10
+            [attack_power:protected] => 3
+            [hit_points:protected] => 59
+        )
+
+    [elf0] => Elf Object
+        (
+            [id:protected] => elf0
+            [pos_x:protected] => 22
+            [pos_y:protected] => 10
+            [attack_power:protected] => 3
+            [hit_points:protected] => 23
+        )
+
+    [elf1] => Elf Object
+        (
+            [id:protected] => elf1
+            [pos_x:protected] => 22
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin2] => Goblin Object
+        (
+            [id:protected] => goblin2
+            [pos_x:protected] => 20
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [elf6] => Elf Object
+        (
+            [id:protected] => elf6
+            [pos_x:protected] => 21
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 62
+        )
+
+    [goblin19] => Goblin Object
+        (
+            [id:protected] => goblin19
+            [pos_x:protected] => 21
+            [pos_y:protected] => 13
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin3] => Goblin Object
+        (
+            [id:protected] => goblin3
+            [pos_x:protected] => 22
+            [pos_y:protected] => 13
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin12] => Goblin Object
+        (
+            [id:protected] => goblin12
+            [pos_x:protected] => 7
+            [pos_y:protected] => 16
+            [attack_power:protected] => 3
+            [hit_points:protected] => 131
+        )
+
+    [goblin14] => Goblin Object
+        (
+            [id:protected] => goblin14
+            [pos_x:protected] => 8
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin6] => Goblin Object
+        (
+            [id:protected] => goblin6
+            [pos_x:protected] => 11
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [elf9] => Elf Object
+        (
+            [id:protected] => elf9
+            [pos_x:protected] => 12
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 11
+        )
+
+    [goblin11] => Goblin Object
+        (
+            [id:protected] => goblin11
+            [pos_x:protected] => 21
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin10] => Goblin Object
+        (
+            [id:protected] => goblin10
+            [pos_x:protected] => 10
+            [pos_y:protected] => 20
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin16] => Goblin Object
+        (
+            [id:protected] => goblin16
+            [pos_x:protected] => 12
+            [pos_y:protected] => 20
+            [attack_power:protected] => 3
+            [hit_points:protected] => 53
+        )
+
+    [goblin13] => Goblin Object
+        (
+            [id:protected] => goblin13
+            [pos_x:protected] => 9
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin18] => Goblin Object
+        (
+            [id:protected] => goblin18
+            [pos_x:protected] => 11
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 134
+        )
+
+    [goblin9] => Goblin Object
+        (
+            [id:protected] => goblin9
+            [pos_x:protected] => 18
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin4] => Goblin Object
+        (
+            [id:protected] => goblin4
+            [pos_x:protected] => 10
+            [pos_y:protected] => 22
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin7] => Goblin Object
+        (
+            [id:protected] => goblin7
+            [pos_x:protected] => 11
+            [pos_y:protected] => 22
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin17] => Goblin Object
+        (
+            [id:protected] => goblin17
+            [pos_x:protected] => 13
+            [pos_y:protected] => 22
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+)
+removing elf9 at 12,12
+Turn: 1728 rounds: 68 last turn by goblin16
+################################
+##########.###.###..############
+##########..##......############
+#########...##....##############
+######.....###......############
+##########..........############
+##########.............#########
+#######...#.....#......#########
+#...##....##..#..#....#...######
+##......###..##..####.#..#######
+#.....#..#....#.###..GE..#######
+#.......##............E...######
+#.............#####.GEG....#####
+#####....#...#######.G......####
+####..#G....#########.......####
+#.........#.#########......#####
+#.##........#########.......####
+######..G...#########G.......###
+######....G.#########....#....##
+#######..G.G.#######..........##
+#######.....G.#####............#
+#######...GG.G.....G...........#
+####.....G......##............##
+####............##............##
+####....#.....####....##....#.##
+#######.......####...####..#####
+########.........########..#####
+##########.......#########...###
+##########.......#########..####
+##########....############..####
+###########...##################
+################################
+Array
+(
+    [goblin0] => Goblin Object
+        (
+            [id:protected] => goblin0
+            [pos_x:protected] => 21
+            [pos_y:protected] => 10
+            [attack_power:protected] => 3
+            [hit_points:protected] => 56
+        )
+
+    [elf0] => Elf Object
+        (
+            [id:protected] => elf0
+            [pos_x:protected] => 22
+            [pos_y:protected] => 10
+            [attack_power:protected] => 3
+            [hit_points:protected] => 20
+        )
+
+    [elf1] => Elf Object
+        (
+            [id:protected] => elf1
+            [pos_x:protected] => 22
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin2] => Goblin Object
+        (
+            [id:protected] => goblin2
+            [pos_x:protected] => 20
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 194
+        )
+
+    [elf6] => Elf Object
+        (
+            [id:protected] => elf6
+            [pos_x:protected] => 21
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 44
+        )
+
+    [goblin3] => Goblin Object
+        (
+            [id:protected] => goblin3
+            [pos_x:protected] => 22
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 197
+        )
+
+    [goblin19] => Goblin Object
+        (
+            [id:protected] => goblin19
+            [pos_x:protected] => 21
+            [pos_y:protected] => 13
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin12] => Goblin Object
+        (
+            [id:protected] => goblin12
+            [pos_x:protected] => 7
+            [pos_y:protected] => 14
+            [attack_power:protected] => 3
+            [hit_points:protected] => 131
+        )
+
+    [goblin14] => Goblin Object
+        (
+            [id:protected] => goblin14
+            [pos_x:protected] => 8
+            [pos_y:protected] => 17
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin11] => Goblin Object
+        (
+            [id:protected] => goblin11
+            [pos_x:protected] => 21
+            [pos_y:protected] => 17
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin10] => Goblin Object
+        (
+            [id:protected] => goblin10
+            [pos_x:protected] => 10
+            [pos_y:protected] => 18
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin6] => Goblin Object
+        (
+            [id:protected] => goblin6
+            [pos_x:protected] => 11
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin13] => Goblin Object
+        (
+            [id:protected] => goblin13
+            [pos_x:protected] => 9
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin16] => Goblin Object
+        (
+            [id:protected] => goblin16
+            [pos_x:protected] => 12
+            [pos_y:protected] => 20
+            [attack_power:protected] => 3
+            [hit_points:protected] => 47
+        )
+
+    [goblin18] => Goblin Object
+        (
+            [id:protected] => goblin18
+            [pos_x:protected] => 10
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 134
+        )
+
+    [goblin7] => Goblin Object
+        (
+            [id:protected] => goblin7
+            [pos_x:protected] => 11
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin17] => Goblin Object
+        (
+            [id:protected] => goblin17
+            [pos_x:protected] => 13
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin9] => Goblin Object
+        (
+            [id:protected] => goblin9
+            [pos_x:protected] => 19
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin4] => Goblin Object
+        (
+            [id:protected] => goblin4
+            [pos_x:protected] => 9
+            [pos_y:protected] => 22
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+)
+removing elf6 at 21,21
+Turn: 1817 rounds: 73 last turn by goblin19
+################################
+##########.###.###..############
+##########..##......############
+#########...##....##############
+######.....###......############
+##########..........############
+##########.............#########
+#######...#.....#......#########
+#...##....##..#..#....#...######
+##......###..##..####.#..#######
+#.....#..#....#.###..GE..#######
+#.......##............E...######
+#.........G...#####.G.G....#####
+#####....#...#######.G......####
+####..#..G..#########.G.....####
+#.........#G#########......#####
+#.##.....G..#########.......####
+######....G.#########........###
+######...G..#########G...#....##
+#######.G....#######..........##
+#######.G..G..#####............#
+#######...........G............#
+####............##............##
+####............##............##
+####....#.....####....##....#.##
+#######.......####...####..#####
+########.........########..#####
+##########.......#########...###
+##########.......#########..####
+##########....############..####
+###########...##################
+################################
+Array
+(
+    [goblin0] => Goblin Object
+        (
+            [id:protected] => goblin0
+            [pos_x:protected] => 21
+            [pos_y:protected] => 10
+            [attack_power:protected] => 3
+            [hit_points:protected] => 41
+        )
+
+    [elf0] => Elf Object
+        (
+            [id:protected] => elf0
+            [pos_x:protected] => 22
+            [pos_y:protected] => 10
+            [attack_power:protected] => 3
+            [hit_points:protected] => 5
+        )
+
+    [elf1] => Elf Object
+        (
+            [id:protected] => elf1
+            [pos_x:protected] => 22
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin12] => Goblin Object
+        (
+            [id:protected] => goblin12
+            [pos_x:protected] => 10
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 131
+        )
+
+    [goblin2] => Goblin Object
+        (
+            [id:protected] => goblin2
+            [pos_x:protected] => 20
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 179
+        )
+
+    [goblin3] => Goblin Object
+        (
+            [id:protected] => goblin3
+            [pos_x:protected] => 22
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 182
+        )
+
+    [goblin19] => Goblin Object
+        (
+            [id:protected] => goblin19
+            [pos_x:protected] => 21
+            [pos_y:protected] => 13
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin14] => Goblin Object
+        (
+            [id:protected] => goblin14
+            [pos_x:protected] => 9
+            [pos_y:protected] => 14
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin11] => Goblin Object
+        (
+            [id:protected] => goblin11
+            [pos_x:protected] => 22
+            [pos_y:protected] => 14
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin10] => Goblin Object
+        (
+            [id:protected] => goblin10
+            [pos_x:protected] => 11
+            [pos_y:protected] => 15
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin13] => Goblin Object
+        (
+            [id:protected] => goblin13
+            [pos_x:protected] => 9
+            [pos_y:protected] => 16
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin6] => Goblin Object
+        (
+            [id:protected] => goblin6
+            [pos_x:protected] => 10
+            [pos_y:protected] => 17
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin18] => Goblin Object
+        (
+            [id:protected] => goblin18
+            [pos_x:protected] => 9
+            [pos_y:protected] => 18
+            [attack_power:protected] => 3
+            [hit_points:protected] => 134
+        )
+
+    [goblin9] => Goblin Object
+        (
+            [id:protected] => goblin9
+            [pos_x:protected] => 21
+            [pos_y:protected] => 18
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin4] => Goblin Object
+        (
+            [id:protected] => goblin4
+            [pos_x:protected] => 8
+            [pos_y:protected] => 19
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin7] => Goblin Object
+        (
+            [id:protected] => goblin7
+            [pos_x:protected] => 8
+            [pos_y:protected] => 20
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin16] => Goblin Object
+        (
+            [id:protected] => goblin16
+            [pos_x:protected] => 11
+            [pos_y:protected] => 20
+            [attack_power:protected] => 3
+            [hit_points:protected] => 47
+        )
+
+    [goblin17] => Goblin Object
+        (
+            [id:protected] => goblin17
+            [pos_x:protected] => 18
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+)
+removing elf0 at 22,22
+Turn: 1847 rounds: 75 last turn by goblin0
+################################
+##########.###.###..############
+##########..##......############
+#########...##....##############
+######.....###......############
+##########..........############
+##########.............#########
+#######...#.....#......#########
+#...##....##..#..#....#...######
+##......###..##..####.#..#######
+#.....#..#....#.###..G...#######
+#.......##G.........G.E...######
+#.............#####..GG....#####
+#####....#GG.#######...G....####
+####..#.....#########.......####
+#........G#.#########......#####
+#.##......G.#########G......####
+######...G..#########........###
+######..G...#########....#....##
+#######......#######..........##
+#######..G..G.#####G...........#
+#######........................#
+####............##............##
+####............##............##
+####....#.....####....##....#.##
+#######.......####...####..#####
+########.........########..#####
+##########.......#########...###
+##########.......#########..####
+##########....############..####
+###########...##################
+################################
+Array
+(
+    [goblin0] => Goblin Object
+        (
+            [id:protected] => goblin0
+            [pos_x:protected] => 21
+            [pos_y:protected] => 10
+            [attack_power:protected] => 3
+            [hit_points:protected] => 38
+        )
+
+    [goblin12] => Goblin Object
+        (
+            [id:protected] => goblin12
+            [pos_x:protected] => 10
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 131
+        )
+
+    [goblin2] => Goblin Object
+        (
+            [id:protected] => goblin2
+            [pos_x:protected] => 20
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 179
+        )
+
+    [elf1] => Elf Object
+        (
+            [id:protected] => elf1
+            [pos_x:protected] => 22
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 197
+        )
+
+    [goblin19] => Goblin Object
+        (
+            [id:protected] => goblin19
+            [pos_x:protected] => 21
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin3] => Goblin Object
+        (
+            [id:protected] => goblin3
+            [pos_x:protected] => 22
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 179
+        )
+
+    [goblin14] => Goblin Object
+        (
+            [id:protected] => goblin14
+            [pos_x:protected] => 10
+            [pos_y:protected] => 13
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin10] => Goblin Object
+        (
+            [id:protected] => goblin10
+            [pos_x:protected] => 11
+            [pos_y:protected] => 13
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin11] => Goblin Object
+        (
+            [id:protected] => goblin11
+            [pos_x:protected] => 23
+            [pos_y:protected] => 13
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin13] => Goblin Object
+        (
+            [id:protected] => goblin13
+            [pos_x:protected] => 9
+            [pos_y:protected] => 15
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin6] => Goblin Object
+        (
+            [id:protected] => goblin6
+            [pos_x:protected] => 10
+            [pos_y:protected] => 16
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin9] => Goblin Object
+        (
+            [id:protected] => goblin9
+            [pos_x:protected] => 21
+            [pos_y:protected] => 16
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin18] => Goblin Object
+        (
+            [id:protected] => goblin18
+            [pos_x:protected] => 9
+            [pos_y:protected] => 17
+            [attack_power:protected] => 3
+            [hit_points:protected] => 134
+        )
+
+    [goblin4] => Goblin Object
+        (
+            [id:protected] => goblin4
+            [pos_x:protected] => 8
+            [pos_y:protected] => 18
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin7] => Goblin Object
+        (
+            [id:protected] => goblin7
+            [pos_x:protected] => 9
+            [pos_y:protected] => 20
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin16] => Goblin Object
+        (
+            [id:protected] => goblin16
+            [pos_x:protected] => 12
+            [pos_y:protected] => 20
+            [attack_power:protected] => 3
+            [hit_points:protected] => 47
+        )
+
+    [goblin17] => Goblin Object
+        (
+            [id:protected] => goblin17
+            [pos_x:protected] => 19
+            [pos_y:protected] => 20
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+)
+removing goblin0 at 22,22
+Turn: 2055 rounds: 88 last turn by elf1
+################################
+##########.###.###..############
+##########..##......############
+#########...##....##############
+######.....###......############
+##########..........############
+##########.............#########
+#######...#.....#......#########
+#...##....##..#..#....#...######
+##......###..##..####.#..#######
+#.....#..#....#.###...G..#######
+#.......##G..........GEG..######
+#.............#####...G....#####
+#####....#...#######.G......####
+####..#...GG#########.......####
+#.......G.#.#########G.....#####
+#.##.......G#########.......####
+######....G.#########........###
+######...G..#########....#....##
+#######......#######..........##
+#######...G..G#####.G..........#
+#######........................#
+####............##............##
+####............##............##
+####....#.....####....##....#.##
+#######.......####...####..#####
+########.........########..#####
+##########.......#########...###
+##########.......#########..####
+##########....############..####
+###########...##################
+################################
+Array
+(
+    [goblin12] => Goblin Object
+        (
+            [id:protected] => goblin12
+            [pos_x:protected] => 10
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 131
+        )
+
+    [goblin2] => Goblin Object
+        (
+            [id:protected] => goblin2
+            [pos_x:protected] => 21
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 179
+        )
+
+    [elf1] => Elf Object
+        (
+            [id:protected] => elf1
+            [pos_x:protected] => 22
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 50
+        )
+
+    [goblin11] => Goblin Object
+        (
+            [id:protected] => goblin11
+            [pos_x:protected] => 23
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin3] => Goblin Object
+        (
+            [id:protected] => goblin3
+            [pos_x:protected] => 22
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 179
+        )
+
+    [goblin19] => Goblin Object
+        (
+            [id:protected] => goblin19
+            [pos_x:protected] => 21
+            [pos_y:protected] => 13
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin14] => Goblin Object
+        (
+            [id:protected] => goblin14
+            [pos_x:protected] => 10
+            [pos_y:protected] => 14
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin10] => Goblin Object
+        (
+            [id:protected] => goblin10
+            [pos_x:protected] => 11
+            [pos_y:protected] => 14
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin13] => Goblin Object
+        (
+            [id:protected] => goblin13
+            [pos_x:protected] => 8
+            [pos_y:protected] => 15
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin9] => Goblin Object
+        (
+            [id:protected] => goblin9
+            [pos_x:protected] => 21
+            [pos_y:protected] => 15
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin6] => Goblin Object
+        (
+            [id:protected] => goblin6
+            [pos_x:protected] => 11
+            [pos_y:protected] => 16
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin18] => Goblin Object
+        (
+            [id:protected] => goblin18
+            [pos_x:protected] => 10
+            [pos_y:protected] => 17
+            [attack_power:protected] => 3
+            [hit_points:protected] => 134
+        )
+
+    [goblin4] => Goblin Object
+        (
+            [id:protected] => goblin4
+            [pos_x:protected] => 9
+            [pos_y:protected] => 18
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin7] => Goblin Object
+        (
+            [id:protected] => goblin7
+            [pos_x:protected] => 10
+            [pos_y:protected] => 20
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin16] => Goblin Object
+        (
+            [id:protected] => goblin16
+            [pos_x:protected] => 13
+            [pos_y:protected] => 20
+            [attack_power:protected] => 3
+            [hit_points:protected] => 47
+        )
+
+    [goblin17] => Goblin Object
+        (
+            [id:protected] => goblin17
+            [pos_x:protected] => 20
+            [pos_y:protected] => 20
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+)
+removing elf1 at 22,22
+Turn: 2139 rounds: 93 last turn by goblin11
+################################
+##########.###.###..############
+##########..##......############
+#########...##....##############
+######.....###......############
+##########..........############
+##########.............#########
+#######...#.....#......#########
+#...##....##..#..#....#...######
+##......###G.##..####.#..#######
+#.....#..#....#.###...G..#######
+#.......##..GG.......G.G..######
+#.............#####...G....#####
+#####....#G..#######..G.....####
+####..#....G#########.......####
+#.........#.#########......#####
+#.##.....G..#########G......####
+######..G...#########........###
+######....G.#########....#....##
+#######......#######..........##
+#######.......#####............#
+#######..........G.............#
+####............##............##
+####............##............##
+####....#.....####....##....#.##
+#######.......####...####..#####
+########.........########..#####
+##########.......#########...###
+##########.......#########..####
+##########....############..####
+###########...##################
+################################
+Array
+(
+    [goblin14] => Goblin Object
+        (
+            [id:protected] => goblin14
+            [pos_x:protected] => 11
+            [pos_y:protected] => 9
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin19] => Goblin Object
+        (
+            [id:protected] => goblin19
+            [pos_x:protected] => 22
+            [pos_y:protected] => 10
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin10] => Goblin Object
+        (
+            [id:protected] => goblin10
+            [pos_x:protected] => 12
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin12] => Goblin Object
+        (
+            [id:protected] => goblin12
+            [pos_x:protected] => 13
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 131
+        )
+
+    [goblin2] => Goblin Object
+        (
+            [id:protected] => goblin2
+            [pos_x:protected] => 21
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 164
+        )
+
+    [goblin11] => Goblin Object
+        (
+            [id:protected] => goblin11
+            [pos_x:protected] => 23
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin3] => Goblin Object
+        (
+            [id:protected] => goblin3
+            [pos_x:protected] => 22
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 179
+        )
+
+    [goblin13] => Goblin Object
+        (
+            [id:protected] => goblin13
+            [pos_x:protected] => 10
+            [pos_y:protected] => 13
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin9] => Goblin Object
+        (
+            [id:protected] => goblin9
+            [pos_x:protected] => 22
+            [pos_y:protected] => 13
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin6] => Goblin Object
+        (
+            [id:protected] => goblin6
+            [pos_x:protected] => 11
+            [pos_y:protected] => 14
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin18] => Goblin Object
+        (
+            [id:protected] => goblin18
+            [pos_x:protected] => 9
+            [pos_y:protected] => 16
+            [attack_power:protected] => 3
+            [hit_points:protected] => 134
+        )
+
+    [goblin17] => Goblin Object
+        (
+            [id:protected] => goblin17
+            [pos_x:protected] => 21
+            [pos_y:protected] => 16
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin4] => Goblin Object
+        (
+            [id:protected] => goblin4
+            [pos_x:protected] => 8
+            [pos_y:protected] => 17
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin7] => Goblin Object
+        (
+            [id:protected] => goblin7
+            [pos_x:protected] => 10
+            [pos_y:protected] => 18
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin16] => Goblin Object
+        (
+            [id:protected] => goblin16
+            [pos_x:protected] => 17
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 47
+        )
+
+)
+total hp: 2655
+246915
+Turn: 2139 rounds: 93 last turn by goblin3
+################################
+##########.###.###..############
+##########..##......############
+#########...##....##############
+######.....###......############
+##########..........############
+##########.............#########
+#######...#.....#......#########
+#...##....##..#..#....#...######
+##......###G.##..####.#..#######
+#.....#..#....#.###...G..#######
+#.......##..GG.......G.G..######
+#.............#####...G....#####
+#####....#G..#######..G.....####
+####..#....G#########.......####
+#.........#.#########......#####
+#.##.....G..#########G......####
+######..G...#########........###
+######....G.#########....#....##
+#######......#######..........##
+#######.......#####............#
+#######..........G.............#
+####............##............##
+####............##............##
+####....#.....####....##....#.##
+#######.......####...####..#####
+########.........########..#####
+##########.......#########...###
+##########.......#########..####
+##########....############..####
+###########...##################
+################################
+Array
+(
+    [goblin14] => Goblin Object
+        (
+            [id:protected] => goblin14
+            [pos_x:protected] => 11
+            [pos_y:protected] => 9
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin19] => Goblin Object
+        (
+            [id:protected] => goblin19
+            [pos_x:protected] => 22
+            [pos_y:protected] => 10
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin10] => Goblin Object
+        (
+            [id:protected] => goblin10
+            [pos_x:protected] => 12
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin12] => Goblin Object
+        (
+            [id:protected] => goblin12
+            [pos_x:protected] => 13
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 131
+        )
+
+    [goblin2] => Goblin Object
+        (
+            [id:protected] => goblin2
+            [pos_x:protected] => 21
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 164
+        )
+
+    [goblin11] => Goblin Object
+        (
+            [id:protected] => goblin11
+            [pos_x:protected] => 23
+            [pos_y:protected] => 11
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin3] => Goblin Object
+        (
+            [id:protected] => goblin3
+            [pos_x:protected] => 22
+            [pos_y:protected] => 12
+            [attack_power:protected] => 3
+            [hit_points:protected] => 179
+        )
+
+    [goblin13] => Goblin Object
+        (
+            [id:protected] => goblin13
+            [pos_x:protected] => 10
+            [pos_y:protected] => 13
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin9] => Goblin Object
+        (
+            [id:protected] => goblin9
+            [pos_x:protected] => 22
+            [pos_y:protected] => 13
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin6] => Goblin Object
+        (
+            [id:protected] => goblin6
+            [pos_x:protected] => 11
+            [pos_y:protected] => 14
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin18] => Goblin Object
+        (
+            [id:protected] => goblin18
+            [pos_x:protected] => 9
+            [pos_y:protected] => 16
+            [attack_power:protected] => 3
+            [hit_points:protected] => 134
+        )
+
+    [goblin17] => Goblin Object
+        (
+            [id:protected] => goblin17
+            [pos_x:protected] => 21
+            [pos_y:protected] => 16
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin4] => Goblin Object
+        (
+            [id:protected] => goblin4
+            [pos_x:protected] => 8
+            [pos_y:protected] => 17
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin7] => Goblin Object
+        (
+            [id:protected] => goblin7
+            [pos_x:protected] => 10
+            [pos_y:protected] => 18
+            [attack_power:protected] => 3
+            [hit_points:protected] => 200
+        )
+
+    [goblin16] => Goblin Object
+        (
+            [id:protected] => goblin16
+            [pos_x:protected] => 17
+            [pos_y:protected] => 21
+            [attack_power:protected] => 3
+            [hit_points:protected] => 47
+        )
+
+)
