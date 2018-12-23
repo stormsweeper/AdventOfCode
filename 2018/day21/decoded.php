@@ -3,6 +3,11 @@ $reg0 = intval($argv[2] ?? 0);
 $REG = [$reg0, 0, 0, 0, 0, 0];
 $ops = 0;
 
+$passes = 0;
+$max = 12000;
+
+$prev = [];
+
 #ip 2
 #L00: seti 123 0 3
 L00: $REG[3] = 123;
@@ -18,12 +23,12 @@ $REG[3] = $REG[3] & 456;
 
 #L02: eqri 3 72 3
 L02: if ($REG[3] === 72) { // true on first pass
-    echo "pass L02 ({$REG[3]} === 72)\n";
+    //echo "pass L02 ({$REG[3]} === 72)\n";
     $REG[3] = 1;
     #L03: addr 3 2 2
     goto L05; // 1 + 3 + 1
 } else {
-    echo "fail L02 ({$REG[3]} === 72)\n";
+    //echo "fail L02 ({$REG[3]} === 72)\n";
     $REG[3] = 0;
     #L03: addr 3 2 2
     goto L04; // 0 + 3 + 1
@@ -51,12 +56,12 @@ L12: $REG[3] = $REG[3] & 16777215; // first pass this will be 8563139
 
 #L13: gtir 256 1 4
 L13: if (256 > $REG[1]) { // will be false first pass
-    echo "pass L13 (256 > {$REG[1]})\n";
+    //echo "pass L13 (256 > {$REG[1]})\n";
     $REG[4] = 1;
     #L14: addr 4 2 2
     goto L16; // 6 ops
 } else {
-    echo "fail L13 (256 > {$REG[1]})\n";
+    //echo "fail L13 (256 > {$REG[1]})\n";
     $REG[4] = 0;
     #L14: addr 4 2 2
     goto L15;
@@ -76,12 +81,12 @@ L18: $REG[5] = $REG[4] + 1;
 L19: $REG[5] = $REG[5] * 256;
 #L20: gtrr 5 1 5
 L20: if ($REG[5] > $REG[1]) {
-    echo "pass L20 ({$REG[5]} > {$REG[1]})\n";
+    //echo "pass L20 ({$REG[5]} > {$REG[1]})\n";
     $REG[5] = 1;
     #L21: addr 5 2 2
     goto L23;
 } else {
-    echo "false L20 ({$REG[5]} > {$REG[1]})\n";
+    //echo "false L20 ({$REG[5]} > {$REG[1]})\n";
     $REG[5] = 0;
     #L21: addr 5 2 2
     goto L22;
@@ -105,14 +110,29 @@ L27: goto L08;
 
 #L28: eqrr 3 0 4
 L28:
-echo "L28";print_r($REG); exit;
+if ($passes++ > $max) {
+    echo "L28";print_r($REG); exit;
+}
+else {
+    if ($passes === 1) {
+        echo "first is {$REG[3]}\n";
+    }
+    $key = 'reg3='.$REG[3];
+    if (isset($prev[$key])) {
+        echo "looping, likely to be {$last_key}\n";
+        exit;
+    }
+    //echo "contender: {$REG[3]} at {$passes}\n";
+    $prev[$key] = $passes;
+    $last_key = $key;
+}
 if ($REG[3] === $REG[0]) {
-    echo "pass L28 ({$REG[3]} === {$REG[0]})\n";
+    //echo "pass L28 ({$REG[3]} === {$REG[0]})\n";
     $REG[4] = 1;
     #L29: addr 4 2 2
     goto HALT; // 31
 } else {
-    echo "fail L28 ({$REG[3]} === {$REG[0]})\n";
+    //echo "fail L28 ({$REG[3]} === {$REG[0]})\n";
     $REG[4] = 0;
     #L29: addr 4 2 2
     goto L30;
