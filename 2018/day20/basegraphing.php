@@ -1,13 +1,5 @@
 <?php
 
-function pos2key($pos) {
-    return implode(',', $pos);
-}
-
-function key2pos($key) {
-    return array_map('intval', explode(',', $key));
-}
-
 function nextFrom($pos, string $dir) {
     switch ($dir) {
         case 'N': $pos[1]--; break;
@@ -56,7 +48,7 @@ for ($i = 0; $i < $max_steps; $i ++) {
             // take step
             $dist++;
             $current = nextFrom($current, $step);
-            $key = pos2key($current);
+            $key = "{$current[0]},{$current[1]}";
             if (isset($mapped[$key])) {
                 if ($mapped[$key] > $dist) {
                     $mapped[$key] = $dist;
