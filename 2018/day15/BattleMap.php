@@ -17,7 +17,7 @@ class BattleMap {
         self::$instance = new self($input);
     }
 
-    public static function getInstance() {
+    public static function getInstance(): BattleMap {
         return self::$instance;
     }
 
@@ -291,7 +291,7 @@ class BattleMap {
             );
         }
 
-        return (array_shift($dests))->location;
+        return (array_shift($dests))->headNode()->location;
     }
 
     public function bestDest(BattleMapLocation $from, string $targetType): ?BattleMapPathNode {

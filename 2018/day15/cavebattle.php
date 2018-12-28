@@ -16,3 +16,5 @@ echo $battle->currentScore() . "\n";
 $battle->printDebug();
 // get total HP of winners
 // multiply by # of full rounds
+
+// not 246915
