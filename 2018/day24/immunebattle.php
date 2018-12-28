@@ -201,7 +201,7 @@ function getSelectionOrder($groups) {
             }
 
             // take highest init
-            $b->initiative <=> $a->initiative;
+            return $b->initiative <=> $a->initiative;
         }
     );
     return array_keys($groups);
@@ -234,12 +234,6 @@ $max_rounds = 10000;
 
 while (ArmyGroup::battleWagesOn() && $rounds < $max_rounds) {
     $rounds++;
-    if ($rounds === 499) {
-        print_r($groups['immuneSystem1']);
-        print_r($groups['infection8']);
-        print_r($groups['infection9']);
-        exit;
-    }
     echo "\nROUND {$rounds}\n";
     // sort by EP,init descending
     $selectors = getSelectionOrder($groups);
