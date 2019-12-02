@@ -6,6 +6,8 @@ I'll still solve first in PHP, but will follow up in others. This will allow me 
 
 My general guidelines for solutions:
 - Input is taken as a text file argument, unless the puzzle gives just a short list of inputs in which case they will be separate arguments
+  - file input programs will be executed like `php solution.php input.txt`
+  - non-file inputs will be `php solution.php input1 input 2 input3 ...`
 - Output is printed to stdout
 - "Core" modules only
 - Descriptive variables and verbose code; I'm not playing golf here
