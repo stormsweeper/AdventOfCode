@@ -4,17 +4,18 @@ $input = trim(file_get_contents($argv[1]));
 $input = explode("\n", $input);
 
 class Point {
-    public $x, $y, $color;
-    public $top, $bottom, $left, $right;
+    public $x, $y, $color, $length;
+    public $top, $bottom, $left, $right, $is_end = false;
 
-    function __construct(int $x, int $y, int $color) {
+    function __construct(int $x, int $y, int $color, int $length = 0) {
         $this->x = $x;
         $this->y = $y;
         $this->color = $color;
+        $this->length = $length;
     }
 
     static function fromPoint(Point $other): Point {
-        return new Point($other->x, $other->y, $other->color);
+        return new Point($other->x, $other->y, $other->color, $other->length);
     }
 
     function dist(Point $other): int {
@@ -38,12 +39,7 @@ class Point {
     }
 
     function key(): string {
-        return sprintf(
-            '%s,%s,%s|%s|%s|%s|%s',
-            $this->x, $this->y, $this->color,
-            isset($this->top), isset($this->bottom),
-            isset($this->left), isset($this->right)
-        );
+        return print_r($this, true);
     }
 }
 
@@ -56,6 +52,8 @@ function nextSegment(Point $prev, string $next): array {
         $top->bottom = $bottom;
         $bottom->top = $top;
         $top->y += $dist;
+        $top->length += $dist;
+        $top->is_end = true;
         return [$bottom, $top];
     } elseif ($dir === 'D') {
         $top = Point::fromPoint($prev);
@@ -63,6 +61,8 @@ function nextSegment(Point $prev, string $next): array {
         $top->bottom = $bottom;
         $bottom->top = $top;
         $bottom->y -= $dist;
+        $bottom->length += $dist;
+        $bottom->is_end = true;
         return [$top, $bottom];
     } elseif ($dir === 'L') {
         $left = Point::fromPoint($prev);
@@ -70,6 +70,8 @@ function nextSegment(Point $prev, string $next): array {
         $left->right = $right;
         $right->left = $left;
         $left->x -= $dist;
+        $left->length += $dist;
+        $left->is_end = true;
         return [$right, $left];
     } elseif ($dir === 'R') {
         $left = Point::fromPoint($prev);
@@ -77,6 +79,8 @@ function nextSegment(Point $prev, string $next): array {
         $left->right = $right;
         $right->left = $left;
         $right->x += $dist;
+        $right->length += $dist;
+        $right->is_end = true;
         return [$left, $right];
     }
     throw new RuntimeException('Could not parse next: ' . $next);
@@ -117,16 +121,35 @@ foreach ($points as $point) {
         foreach ($crossing as $c) {
             $int = Point::fromPoint($point);
             $int->y = $c->y;
+            $horz_end = $c->is_end ? $c : $c->right;
+            $horz_length = $horz_end->length - $horz_end->dist($int);
+            $vert_end = $point->is_end ? $point : $point->bottom;
+            $vert_length = $vert_end->length - $vert_end->dist($int);
+            $int->length = $horz_length + $vert_length;
             $intersections[] = $int;
         }
     }
 }
 
+// get absolute closest
 usort(
     $intersections,
     function (Point $a, Point $b) {
         return $a->originDist() <=> $b->originDist();
     }
 );
+$closest = ($intersections[0])->originDist();
 
-echo ($intersections[0])->originDist();
+// get closest by wire length
+usort(
+    $intersections,
+    function (Point $a, Point $b) {
+        return $a->length <=> $b->length;
+    }
+);
+$shortest = ($intersections[0])->length;
+
+echo
+"closest: {$closest}
+shortest: {$shortest}
+";
