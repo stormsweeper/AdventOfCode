@@ -34,4 +34,27 @@ for ($p = $min; $p <= $max; $p++) {
     }
 }
 
-echo count($possible);
+function actuallyValid(int $possible) {
+    $possible_str = (string)$possible;
+    foreach (count_chars($possible_str, 1) as $count) {
+        if ($count === 2) {
+            return true;
+        }
+    }
+    return false;
+}
+
+//echo actuallyValid(112233) ? "Y\n" : "N\n";
+//echo actuallyValid(123444) ? "Y\n" : "N\n";
+//echo actuallyValid(111122) ? "Y\n" : "N\n";
+
+$valid = array_filter($possible, 'actuallyValid');
+
+$possible_count = count($possible);
+$valid_count = count($valid);
+
+echo
+"
+possible: {$possible_count}
+valid: {$valid_count}
+";
