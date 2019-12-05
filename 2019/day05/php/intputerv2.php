@@ -7,6 +7,10 @@ class IntPuterV2 {
     const OPCODE_MULTIPLY = 2;
     const OPCODE_INPUT = 3;
     const OPCODE_OUTPUT = 4;
+    const OPCODE_JUMP_IF_TRUE = 5;
+    const OPCODE_JUMP_IF_FALSE = 6;
+    const OPCODE_LESS_THAN = 7;
+    const OPCODE_EQUALS = 8;
     const OPCODE_EXIT = 99;
     const OPCODE_INVALID = -1;
     const VALID_OPCODES = [
@@ -14,15 +18,11 @@ class IntPuterV2 {
         self::OPCODE_MULTIPLY,
         self::OPCODE_INPUT,
         self::OPCODE_OUTPUT,
+        self::OPCODE_JUMP_IF_TRUE,
+        self::OPCODE_JUMP_IF_FALSE,
+        self::OPCODE_LESS_THAN,
+        self::OPCODE_EQUALS,
         self::OPCODE_EXIT,
-    ];
-
-    const OPCODE_PARAM_LENGTHS = [
-        self::OPCODE_ADD => 3,
-        self::OPCODE_MULTIPLY => 3,
-        self::OPCODE_INPUT => 3,
-        self::OPCODE_OUTPUT => 3,
-        self::OPCODE_EXIT => 0,
     ];
 
     const PARAM_MODE_POS = 0;
@@ -38,9 +38,10 @@ class IntPuterV2 {
     function run(): void {
         $this->cursor = 0;
         while ($this->cursor < count($this->registers)) {
-            list($opcode, $a_mode, $b_mode, $c_mode) = $this->parseOpcodeAndModes($this->readNextRegister());
+            $rawopcode = $this->readNextRegister();
+            list($opcode, $a_mode, $b_mode, $c_mode) = $this->parseOpcodeAndModes($rawopcode);
             if ($opcode === self::OPCODE_INVALID) {
-                throw new RuntimeException('Unknown opcode: ' . $opcode);
+                throw new RuntimeException('Unknown opcode: ' . $rawopcode);
             }
             if ($opcode === self::OPCODE_EXIT) {
                 break;
@@ -75,11 +76,59 @@ class IntPuterV2 {
                     $a = $this->getRegister($a);
                 }
                 $this->output($a);
+            } elseif ($opcode === self::OPCODE_JUMP_IF_TRUE) {
+                $a = $this->readNextRegister();
+                if ($a_mode === self::PARAM_MODE_POS) {
+                    $a = $this->getRegister($a);
+                }
+                $b = $this->readNextRegister();
+                if ($b_mode === self::PARAM_MODE_POS) {
+                    $b = $this->getRegister($b);
+                }
+                if ($a !== 0) {
+                    $this->jumpTo($b);
+                }
+            } elseif ($opcode === self::OPCODE_JUMP_IF_FALSE) {
+                $a = $this->readNextRegister();
+                if ($a_mode === self::PARAM_MODE_POS) {
+                    $a = $this->getRegister($a);
+                }
+                $b = $this->readNextRegister();
+                if ($b_mode === self::PARAM_MODE_POS) {
+                    $b = $this->getRegister($b);
+                }
+                if ($a === 0) {
+                    $this->jumpTo($b);
+                }
+            } elseif ($opcode === self::OPCODE_LESS_THAN) {
+                $a = $this->readNextRegister();
+                if ($a_mode === self::PARAM_MODE_POS) {
+                    $a = $this->getRegister($a);
+                }
+                $b = $this->readNextRegister();
+                if ($b_mode === self::PARAM_MODE_POS) {
+                    $b = $this->getRegister($b);
+                }
+                $c = $this->readNextRegister();
+                $this->setRegister($c, (int)$a < $b);
+            } elseif ($opcode === self::OPCODE_EQUALS) {
+                $a = $this->readNextRegister();
+                if ($a_mode === self::PARAM_MODE_POS) {
+                    $a = $this->getRegister($a);
+                }
+                $b = $this->readNextRegister();
+                if ($b_mode === self::PARAM_MODE_POS) {
+                    $b = $this->getRegister($b);
+                }
+                $c = $this->readNextRegister();
+                $this->setRegister($c, (int)$a === $b);
             }
         }
     }
 
     function parseOpcodeAndModes(int $rawopcode): array {
+        // maybe not required, but strict reading of the format suggests it only looks at digits
+        $rawopcode = abs($rawopcode);
         $opcode = $rawopcode % 100;
         if ($rawopcode > self::MAX_RAW_OPCODE || !in_array($opcode, self::VALID_OPCODES)) {
             return [self::OPCODE_INVALID, false, false, false];
@@ -126,6 +175,10 @@ class IntPuterV2 {
 
     function dumpMemory(): array {
         return $this->registers;
+    }
+
+    function jumpTo(int $pos): void {
+        $this->cursor = $pos;
     }
 
     function currentInstruction(): int {
