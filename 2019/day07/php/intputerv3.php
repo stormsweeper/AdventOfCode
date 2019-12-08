@@ -32,13 +32,18 @@ class IntPuterV3 {
     private $cursor = 0;
     private $inputs = [];
     private $last_output;
+    private $output_puter;
+    private $halted = false;
 
     function loadProgram(array $program): void {
+        $this->cursor = 0;
         $this->registers = $program;
     }
 
     function run(): void {
-        $this->cursor = 0;
+        if ($this->hasHalted()) {
+            return;
+        }
         while ($this->cursor < count($this->registers)) {
             $rawopcode = $this->readNextRegister();
             list($opcode, $a_mode, $b_mode, $c_mode) = $this->parseOpcodeAndModes($rawopcode);
@@ -46,6 +51,7 @@ class IntPuterV3 {
                 throw new RuntimeException('Unknown opcode: ' . $rawopcode);
             }
             if ($opcode === self::OPCODE_EXIT) {
+                $this->halted = true;
                 break;
             } elseif ($opcode === self::OPCODE_ADD) {
                 $a = $this->readNextRegister();
@@ -70,6 +76,11 @@ class IntPuterV3 {
                 $c = $this->readNextRegister();
                 $this->setRegister($c, $a * $b);
             } elseif ($opcode === self::OPCODE_INPUT) {
+                // await new input
+                if (!$this->hasInput()) {
+                    $this->jumpRel(-1);
+                    return;
+                }
                 $a = $this->readNextRegister();
                 $this->setRegister($a, $this->getUserInput());
             } elseif ($opcode === self::OPCODE_OUTPUT) {
@@ -151,6 +162,10 @@ class IntPuterV3 {
         return array_shift($this->inputs);
     }
 
+    function hasInput(): bool {
+        return !empty($this->inputs);
+    }
+
     function queueInput(int $input): void {
         $this->inputs[] = $input;
     }
@@ -159,8 +174,15 @@ class IntPuterV3 {
         $this->inputs = [];
     }
 
+    function chainPuter(IntPuterV3 $puter): void {
+        $this->output_puter = $puter;
+    }
+
     function output(int $value): void {
         $this->last_output = $value;
+        if (isset($this->output_puter)) {
+            $this->output_puter->queueInput($value);
+        }
     }
 
     function lastOutput(): int {
@@ -197,8 +219,15 @@ class IntPuterV3 {
         $this->cursor = $pos;
     }
 
+    function jumpRel(int $rel_pos): void {
+        $this->cursor += $rel_pos;
+    }
+
     function currentInstruction(): int {
         return $this->cursor;
     }
 
+    function hasHalted(): bool {
+        return $this->halted;
+    }
 }

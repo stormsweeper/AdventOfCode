@@ -24,18 +24,43 @@ while(count($permutations) < 120) {
     shuffle($phases);
 }
 
-$amp = new IntPuterV3;
+
 $best_output = -100000;
 $best_phases = null;
 foreach ($permutations as $phases) {
-    $output = 0;
-    foreach ($phases as $phase) {
-        $amp->loadProgram($program);
-        $amp->queueInput($phase);
-        $amp->queueInput($output);
-        $amp->run();
-        $output = $amp->lastOutput();
-    }
+    $ampA = new IntPuterV3;
+    $ampA->queueInput($phases[0]);
+    $ampA->queueInput(0);
+    $ampA->loadProgram($program);
+
+    $ampB = new IntPuterV3;
+    $ampB->queueInput($phases[1]);
+    $ampB->loadProgram($program);
+    $ampA->chainPuter($ampB);
+
+    $ampC = new IntPuterV3;
+    $ampC->queueInput($phases[2]);
+    $ampC->loadProgram($program);
+    $ampB->chainPuter($ampC);
+
+    $ampD = new IntPuterV3;
+    $ampD->queueInput($phases[3]);
+    $ampD->loadProgram($program);
+    $ampC->chainPuter($ampD);
+
+    $ampE = new IntPuterV3;
+    $ampE->queueInput($phases[4]);
+    $ampE->loadProgram($program);
+    $ampD->chainPuter($ampE);
+
+    $ampA->run();
+    $ampB->run();
+    $ampC->run();
+    $ampD->run();
+    $ampE->run();
+
+    $output = $ampE->lastOutput();
+
     if ($output > $best_output) {
         $best_output = $output;
         $best_phases = $phases;
