@@ -50,87 +50,45 @@ class IntPuterV4 {
             if ($opcode === self::OPCODE_EXIT) {
                 break;
             } elseif ($opcode === self::OPCODE_ADD) {
-                $a = $this->readNextRegister();
-                if ($a_mode === self::PARAM_MODE_POS || $a_mode === self::PARAM_MODE_REL) {
-                    $a = $this->getRegister($a, $a_mode === self::PARAM_MODE_REL);
-                }
-                $b = $this->readNextRegister();
-                if ($b_mode === self::PARAM_MODE_POS || $b_mode === self::PARAM_MODE_REL) {
-                    $b = $this->getRegister($b, $b_mode === self::PARAM_MODE_REL);
-                }
+                $a = $this->realizeValue($this->readNextRegister(), $a_mode);
+                $b = $this->realizeValue($this->readNextRegister(), $b_mode);
                 $c = $this->readNextRegister();
-                $this->setRegister($c, $a + $b, $c_mode === self::PARAM_MODE_REL);
+                $this->setRegister($c, $a + $b, $c_mode);
             } elseif ($opcode === self::OPCODE_MULTIPLY) {
-                $a = $this->readNextRegister();
-                if ($a_mode === self::PARAM_MODE_POS || $a_mode === self::PARAM_MODE_REL) {
-                    $a = $this->getRegister($a, $a_mode === self::PARAM_MODE_REL);
-                }
-                $b = $this->readNextRegister();
-                if ($b_mode === self::PARAM_MODE_POS || $b_mode === self::PARAM_MODE_REL) {
-                    $b = $this->getRegister($b, $b_mode === self::PARAM_MODE_REL);
-                }
+                $a = $this->realizeValue($this->readNextRegister(), $a_mode);
+                $b = $this->realizeValue($this->readNextRegister(), $b_mode);
                 $c = $this->readNextRegister();
-                $this->setRegister($c, $a * $b, $c_mode === self::PARAM_MODE_REL);
+                $this->setRegister($c, $a * $b, $c_mode);
             } elseif ($opcode === self::OPCODE_INPUT) {
                 $a = $this->readNextRegister();
-                $this->setRegister($a, $this->getUserInput(), $a_mode === self::PARAM_MODE_REL);
+                $this->setRegister($a, $this->getUserInput(), $a_mode);
             } elseif ($opcode === self::OPCODE_OUTPUT) {
-                $a = $this->readNextRegister();
-                if ($a_mode === self::PARAM_MODE_POS || $a_mode === self::PARAM_MODE_REL) {
-                    $a = $this->getRegister($a, $a_mode === self::PARAM_MODE_REL);
-                }
+                $a = $this->realizeValue($this->readNextRegister(), $a_mode);
                 $this->output($a);
             } elseif ($opcode === self::OPCODE_JUMP_IF_TRUE) {
-                $a = $this->readNextRegister();
-                if ($a_mode === self::PARAM_MODE_POS || $a_mode === self::PARAM_MODE_REL) {
-                    $a = $this->getRegister($a, $a_mode === self::PARAM_MODE_REL);
-                }
-                $b = $this->readNextRegister();
-                if ($b_mode === self::PARAM_MODE_POS || $b_mode === self::PARAM_MODE_REL) {
-                    $b = $this->getRegister($b, $b_mode === self::PARAM_MODE_REL);
-                }
+                $a = $this->realizeValue($this->readNextRegister(), $a_mode);
+                $b = $this->realizeValue($this->readNextRegister(), $b_mode);
                 if ($a !== 0) {
                     $this->jumpTo($b);
                 }
             } elseif ($opcode === self::OPCODE_JUMP_IF_FALSE) {
-                $a = $this->readNextRegister();
-                if ($a_mode === self::PARAM_MODE_POS || $a_mode === self::PARAM_MODE_REL) {
-                    $a = $this->getRegister($a, $a_mode === self::PARAM_MODE_REL);
-                }
-                $b = $this->readNextRegister();
-                if ($b_mode === self::PARAM_MODE_POS || $b_mode === self::PARAM_MODE_REL) {
-                    $b = $this->getRegister($b, $b_mode === self::PARAM_MODE_REL);
-                }
+                $a = $this->realizeValue($this->readNextRegister(), $a_mode);
+                $b = $this->realizeValue($this->readNextRegister(), $b_mode);
                 if ($a === 0) {
                     $this->jumpTo($b);
                 }
             } elseif ($opcode === self::OPCODE_LESS_THAN) {
-                $a = $this->readNextRegister();
-                if ($a_mode === self::PARAM_MODE_POS || $a_mode === self::PARAM_MODE_REL) {
-                    $a = $this->getRegister($a, $a_mode === self::PARAM_MODE_REL);
-                }
-                $b = $this->readNextRegister();
-                if ($b_mode === self::PARAM_MODE_POS || $b_mode === self::PARAM_MODE_REL) {
-                    $b = $this->getRegister($b, $b_mode === self::PARAM_MODE_REL);
-                }
+                $a = $this->realizeValue($this->readNextRegister(), $a_mode);
+                $b = $this->realizeValue($this->readNextRegister(), $b_mode);
                 $c = $this->readNextRegister();
-                $this->setRegister($c, (int)$a < $b, $c_mode === self::PARAM_MODE_REL);
+                $this->setRegister($c, (int)$a < $b, $c_mode);
             } elseif ($opcode === self::OPCODE_EQUALS) {
-                $a = $this->readNextRegister();
-                if ($a_mode === self::PARAM_MODE_POS || $a_mode === self::PARAM_MODE_REL) {
-                    $a = $this->getRegister($a, $a_mode === self::PARAM_MODE_REL);
-                }
-                $b = $this->readNextRegister();
-                if ($b_mode === self::PARAM_MODE_POS || $b_mode === self::PARAM_MODE_REL) {
-                    $b = $this->getRegister($b, $b_mode === self::PARAM_MODE_REL);
-                }
+                $a = $this->realizeValue($this->readNextRegister(), $a_mode);
+                $b = $this->realizeValue($this->readNextRegister(), $b_mode);
                 $c = $this->readNextRegister();
-                $this->setRegister($c, (int)$a === $b, $c_mode === self::PARAM_MODE_REL);
+                $this->setRegister($c, (int)$a === $b, $c_mode);
             } elseif ($opcode === self::OPCODE_RELBASE_ADJUST) {
-                $a = $this->readNextRegister();
-                if ($a_mode === self::PARAM_MODE_POS || $a_mode === self::PARAM_MODE_REL) {
-                    $a = $this->getRegister($a, $a_mode === self::PARAM_MODE_REL);
-                }
+                $a = $this->realizeValue($this->readNextRegister(), $a_mode);
                 $this->adjustRelbase($a);
             }
         }
@@ -167,6 +125,13 @@ class IntPuterV4 {
         return $this->getRegister($this->cursor++);
     }
 
+    function realizeValue(int $param, int $mode): int {
+        if ($mode === self::PARAM_MODE_POS || $mode === self::PARAM_MODE_REL) {
+            $param = $this->getRegister($param, $mode === self::PARAM_MODE_REL);
+        }
+        return $param;
+    }
+
     function getRegister(int $pos, bool $relative = false): int {
         if ($relative) {
             $pos += $this->rel_base;
@@ -180,8 +145,8 @@ class IntPuterV4 {
         return $this->registers[$pos];
     }
 
-    function setRegister(int $pos, int $val, bool $relative = false): void {
-        if ($relative) {
+    function setRegister(int $pos, int $val, int $mode): void {
+        if ($mode === self::PARAM_MODE_REL) {
             $pos += $this->rel_base;
         }
         if ($pos < 0) {
