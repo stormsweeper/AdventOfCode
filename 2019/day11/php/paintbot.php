@@ -10,7 +10,7 @@ class Paintbot {
     private $min_y = 0;
     private $max_y = 0;
     private $painted = [];
-    private $facing = 3; // N:3, W:2, S:1, E:0
+    private $facing = 0; // N:0, E:1, S:2, W:3
     private $initial_color = 0;
 
     function __construct(int $initial_square_color = 0) {
@@ -93,7 +93,7 @@ class Paintbot {
         for ($y = $this->max_y; $y >= $this->min_y; $y--) {
             for ($x = $this->min_x; $x <= $this->max_x; $x++) {
                 $this->x = $x; $this->y = $y;
-                $output .= $this->camera() ? '#' : '.';
+                $output .= $this->camera() ? '#' : ' ';
             }
             $output .= "\n";
         }
