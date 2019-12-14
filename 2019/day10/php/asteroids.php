@@ -93,5 +93,9 @@ $los_counts = array_map(
 );
 
 asort($los_counts);
-echo array_pop($los_counts);
+$keys = array_keys($los_counts);
+$pos = array_pop($keys);
+$count = array_pop($los_counts);
+
+echo "ideal: {$pos}\nvisible: {$count}\n";
 
