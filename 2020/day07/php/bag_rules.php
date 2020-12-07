@@ -7,7 +7,7 @@ function parse_rules(string $rules): array {
     $outer = $mo[1];
     $inner = array_map(
         function($bags) {
-            if (preg_match_all('#(\d) ([\w ]+?) bags?#', $bags, $mi)) {
+            if (preg_match_all('#(\d+) ([\w ]+?) bags?#', $bags, $mi)) {
                 return array_combine($mi[2], $mi[1]);
             }
             return [];
