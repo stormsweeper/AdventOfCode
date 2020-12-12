@@ -49,7 +49,7 @@ function key2pos(string $key): array {
 
 function advance_grid(int $size, array $chairs, array $seated, bool $useLOS = false): array {
     static $seen = [];
-    $orig_key = md5(print_grid($size, $chairs, $seated));
+    $orig_key = md5(print_grid($size, $chairs, $seated)) . " useLOS: {$useLOS}";
     if (isset($seen[$orig_key])) {
         return $seen[$orig_key];
     }
