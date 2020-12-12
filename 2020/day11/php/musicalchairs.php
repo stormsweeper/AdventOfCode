@@ -47,7 +47,7 @@ function key2pos(string $key): array {
     return sscanf($key, '%03d,%03d');
 }
 
-function advance_grid(int $size, array $chairs, array $seated): array {
+function advance_grid(int $size, array $chairs, array $seated, bool $useLOS = false): array {
     static $seen = [];
     $orig_key = md5(print_grid($size, $chairs, $seated));
     if (isset($seen[$orig_key])) {
@@ -56,14 +56,14 @@ function advance_grid(int $size, array $chairs, array $seated): array {
     $next = $seated;
     $adjacent = [];
     foreach ($seated as $poskey => $_) {
-        inc_adj($poskey, $adjacent, $size);
+        inc_adj($poskey, $adjacent, $size, $chairs, $useLOS);
     }
     foreach ($chairs as $poskey => $_) {
         #echo "adj: {$poskey},{$level}\n";
         if (empty($adjacent[$poskey])) {
             #echo "filling seat {$poskey}\n";
             $next[$poskey] = 1;
-        } elseif ($adjacent[$poskey] >= 4) {
+        } elseif ($adjacent[$poskey] >= ($useLOS ? 5 : 4)) {
             #echo "vacating seat {$poskey}\n";
             $next[$poskey] = 0;
         }
@@ -71,7 +71,7 @@ function advance_grid(int $size, array $chairs, array $seated): array {
     return $seen[$orig_key] = array_filter($next);
 }
 
-function inc_adj(string $poskey, array &$adjacent, int $size): void {
+function inc_adj(string $poskey, array &$adjacent, int $size, array $chairs, bool $useLOS = false): void {
     $offsets = range(-1, 1);
     foreach ($offsets as $dx) {
         foreach ($offsets as $dy) {
@@ -80,7 +80,16 @@ function inc_adj(string $poskey, array &$adjacent, int $size): void {
             list($x, $y) = key2pos($poskey);
             $x += $dx; $y += $dy;
             if (oob($size, $x, $y)) continue;
-            $adjacent[pos2key($x, $y)] = ($adjacent[pos2key($x, $y)] ?? 0) + 1;
+            $nextpos = pos2key($x, $y);
+            $adjacent[$nextpos] = ($adjacent[$nextpos] ?? 0) + 1;
+            if ($useLOS) {
+                while (!oob($size, $x, $y) && empty($chairs[pos2key($x, $y)])) {
+                    $x += $dx; $y += $dy;
+                    if (oob($size, $x, $y)) break;
+                    $nextpos = pos2key($x, $y);
+                    $adjacent[$nextpos] = ($adjacent[$nextpos] ?? 0) + 1;
+                }
+            }
         }
     }
 }
@@ -99,4 +108,15 @@ while ($last !== $next) {
     #echo print_grid($size, $chairs, $next); echo "--\n--\n\n";
 }
 
-echo array_sum($last);
+echo "Part 1: " . array_sum($last) . "\n";
+
+
+list($size, $chairs, $seated) = parse_seating($input);
+$last = null; $next = $seated;
+
+while ($last !== $next) {
+    $last = $next;
+    $next = advance_grid($size, $chairs, $next, true);
+    #echo print_grid($size, $chairs, $next); echo "--\n--\n\n";
+}
+echo "Part 2: " . array_sum($last) . "\n";
