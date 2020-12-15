@@ -1,5 +1,9 @@
 <?php
 
+
+#  ¯\_(ツ)_/¯
+ini_set('memory_limit', '2G');
+
 $starting = trim($argv[1]);
 $starting = explode(',', $starting);
 $starting = array_map('intval', $starting);
@@ -17,20 +21,21 @@ function next_number(): int {
     if ($turn <= $starting_len) {
         $next = $starting[$turn - 1];
     } else {
-        $last_i = array_key_last($spoken_on[$last_number]);
-        if ($last_i === 0) {
+        if (count($spoken_on[$last_number]) === 1) {
             $next = 0;
         } else {
-            $next = $spoken_on[$last_number][$last_i] - $spoken_on[$last_number][$last_i - 1];
+            $next = $spoken_on[$last_number][1] - $spoken_on[$last_number][0];
         }
     }
     if (!isset($spoken_on[$next])) {
-        $spoken_on[$next] = [];
+        $spoken_on[$next] = [$turn];
+    } else {
+        $spoken_on[$next] = [$spoken_on[$next][1] ?? $spoken_on[$next][0], $turn];
     }
-    $spoken_on[$next][] = $turn;
     return $last_number = $next;
 }
 
+$spoken = [];
 while ($turn < $rounds) {
     #$last = $last_number ?? '-';
     $next = next_number();
