@@ -51,7 +51,7 @@ function generate_regex(array $unparsed): string {
         }
         $unparsed = $next;
     }
-    
+
     return "#^{$decoded[0]}$#m";
 }
 
@@ -59,3 +59,13 @@ $p1_regex = generate_regex($unparsed);
 $p1 = preg_match_all($p1_regex, $messages);
 
 echo "Part 1: {$p1}\n";
+
+# 
+$unparsed[8] = '(?:42)+';
+# had to really google this nonsense
+$unparsed[11] = '(?P<eleven>42(?&eleven)?31)';
+
+$p2_regex = generate_regex($unparsed);
+$p2 = preg_match_all($p2_regex, $messages);
+
+echo "Part 2: {$p2}\n";
