@@ -23,12 +23,28 @@ foreach ($input as $line) {
     }
 }
 
-$maybes = [];
-foreach ($by_allergen as $ings) {
-    foreach ($ings as $ing) $maybes[$ing] = 1;
+#uasort($by_allergen, function($a, $b) {return count($a) <=> count($b);});
+
+$unsafe = [];
+$consider = $by_allergen;
+while ($consider) {
+    $next = [];
+    foreach ($consider as $allergen => $ings) {
+        $maybes = array_diff($ings, $unsafe);
+        if (count($maybes) === 1) {
+            $unsafe[$allergen] = array_pop($maybes);
+        } else {
+            $next[$allergen] = $maybes;
+        }
+    }
+    $consider = $next;
 }
 
-$safe = array_diff_key($all_ingredients, $maybes);
+$safe = array_diff_key($all_ingredients, array_flip($unsafe));
 $p1 = array_sum($safe);
 
 echo "Part 1: {$p1}\n";
+
+ksort($unsafe);
+$p2 = implode(',', $unsafe);
+echo "Part 2: {$p2}\n";
