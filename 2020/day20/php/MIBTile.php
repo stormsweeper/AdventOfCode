@@ -47,6 +47,15 @@ class MIBTile {
         return $num;
     }
 
+    function roughness(): int {
+        $img = array_filter(
+            $this->grid,
+            function($p) { return !preg_match('#(^00[09],|,00[09]$)#', $p); },
+            ARRAY_FILTER_USE_KEY
+        );
+        return array_sum($img);
+    }
+
     static function parse_tiles(string $tiles): array {
         $tiles = explode("\n\n", trim($tiles));
         $parsed = [];
