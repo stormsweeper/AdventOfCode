@@ -21,7 +21,7 @@ class BingoBoard {
     // will be val => pos, complete
     private $unmarked = [];
 
-    // sparse array, will be pos => pos (for lazy reasons)
+    // sparse array, will be val => pos
     private $marked = [];
 
     private $last_marked = -1;
@@ -96,7 +96,7 @@ $first_winner = -1;
 $last_winner = -1;
 foreach ($numbers as $num) {
     foreach ($boards as $bid => $board) {
-        // skip wimnning boards
+        // skip winning boards
         if ($board->isWinner()) continue;
 
         $board->markNumber($num);
