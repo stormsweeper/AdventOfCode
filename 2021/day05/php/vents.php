@@ -28,9 +28,13 @@ foreach ($inputs as $line) {
     if ( $x1===$x2 || $y1===$y2 ) {
         addVent($hv_grid, $x1, $y1, $x2, $y2);
     }
+    addVent($cart_grid, $x1, $y1, $x2, $y2);
 }
 
 $hv_danger = array_filter($hv_grid, function($v) {return $v > 1;});
 $hv_danger = count($hv_danger);
 
-echo $hv_danger;
+$cart_danger = array_filter($cart_grid, function($v) {return $v > 1;});
+$cart_danger = count($cart_danger);
+
+echo "p1: {$hv_danger} p2: {$cart_danger}\n";
