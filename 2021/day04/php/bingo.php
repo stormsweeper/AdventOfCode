@@ -19,17 +19,20 @@ for ($a = 0; $a < 5; $a++) {
 
 class BingoBoard {
     // will be val => pos, complete
-    public $unmarked = [];
+    private $unmarked = [];
 
     // sparse array, will be pos => pos (for lazy reasons)
-    public $marked = [];
+    private $marked = [];
 
-    public $last_marked = -1;
+    private $last_marked = -1;
 
     // sum of all values
-    public $total = -1;
+    private $total = -1;
     // sum of all unmarked values
-    public $unmarked_sum = -1;
+    private $unmarked_sum = -1;
+
+    private $is_winner = false;
+
 
     static function parse_board(string $raw): BingoBoard {
         $b = new static;
@@ -59,14 +62,17 @@ class BingoBoard {
     }
 
     function isWinner(): bool {
-        global $win_permutations;
-        foreach ($win_permutations as $w) {
-            $intersect = array_intersect($w, $this->marked);
-            if (count($intersect) === 5) {
-                return true;
+        if (!$this->is_winner) {
+            global $win_permutations;
+            foreach ($win_permutations as $w) {
+                $intersect = array_intersect($w, $this->marked);
+                if (count($intersect) === 5) {
+                    $this->is_winner = true;
+                    break;
+                }
             }
         }
-        return false;
+        return $this->is_winner;
     }
 
     function score(): int {
@@ -86,16 +92,20 @@ class BingoBoard {
 
 $boards = array_map('BingoBoard::parse_board', $inputs);
 
-$winner = -1;
+$first_winner = -1;
+$last_winner = -1;
 foreach ($numbers as $num) {
     foreach ($boards as $bid => $board) {
+        // skip wimnning boards
+        if ($board->isWinner()) continue;
+
         $board->markNumber($num);
         if ($board->isWinner()) {
-            $winner = $bid;
-            break 2;
+            if ($first_winner === -1) $first_winner = $bid;
+            $last_winner = $bid;
         }
     }
 }
 
-echo $boards[$winner]->score();
+echo "first: {$boards[$first_winner]->score()} last: {$boards[$last_winner]->score()}\n";
 
