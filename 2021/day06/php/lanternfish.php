@@ -11,7 +11,7 @@ $gestation = 7;
 $immaturity = 2;
 
 // how many days to run the sim for
-$sim_length = 80;
+$sim_length = intval($argv[2]??80);
 
 // only tracking the sums of the stages
 $fishies = array_fill(0, $gestation + $immaturity, 0);
