@@ -31,14 +31,18 @@ $p1_cost = $best_cost;
 
 $best_cost = PHP_INT_MAX;
 $best_pos = -1;
+$dist_sums = [];
 
 for ($hpos_a = 0; $hpos_a <= $max_hpos; $hpos_a++) {
     $cost = 0;
     foreach ($crabs_at_hpos as $hpos_b => $num) {
         $dist = abs($hpos_b - $hpos_a);
-        $dist_cost = 0;
-        for ($d = 0; $d <= $dist; $d++) $dist_cost += $d;
-        $cost += $dist_cost * $num;
+        // this caching makes this run in ~130ms vs a few seconds
+        if (!isset($dist_sums[$dist])) {
+            $dist_sums[$dist] = 0;
+            for ($d = 0; $d <= $dist; $d++) $dist_sums[$dist] += $d;
+        }
+        $cost += $dist_sums[$dist] * $num;
         if ($cost > $best_cost) continue 2;
     }
     $best_cost = $cost;
