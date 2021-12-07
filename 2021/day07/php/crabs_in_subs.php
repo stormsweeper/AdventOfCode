@@ -13,42 +13,29 @@ foreach ($inputs as $hpos) {
 }
 arsort($crabs_at_hpos);
 
-$best_cost = PHP_INT_MAX;
-$best_pos = -1;
-
-for ($hpos_a = 0; $hpos_a <= $max_hpos; $hpos_a++) {
-    $cost = 0;
-    foreach ($crabs_at_hpos as $hpos_b => $num) {
-        $cost += abs($hpos_b - $hpos_a) * $num;
-        if ($cost > $best_cost) continue 2;
-    }
-    $best_cost = $cost;
-    $best_pos = $hpos_a;
-}
-
-$p1_cost = $best_cost;
-
-// part 2
-
-$best_cost = PHP_INT_MAX;
-$best_pos = -1;
+$p1_best_cost = $p2_best_cost = PHP_INT_MAX;
 $dist_sums = [];
 
 for ($hpos_a = 0; $hpos_a <= $max_hpos; $hpos_a++) {
-    $cost = 0;
+    $p1_cost = $p2_cost = 0;
     foreach ($crabs_at_hpos as $hpos_b => $num) {
         $dist = abs($hpos_b - $hpos_a);
-        // this caching shaves a few millis
-        if (!isset($dist_sums[$dist])) {
-            $dist_sums[$dist] = $dist / 2 * ($dist + 1);
+
+        // part 1
+        if ($p1_cost < $p1_best_cost) $p1_cost += $dist * $num;
+
+        // part 2
+        if ($p2_cost < $p2_best_cost) {
+            // this caching shaves a few millis
+            if (!isset($dist_sums[$dist])) {
+                $dist_sums[$dist] = $dist / 2 * ($dist + 1);
+            }
+            $p2_cost += $dist_sums[$dist] * $num;
         }
-        $cost += $dist_sums[$dist] * $num;
-        if ($cost > $best_cost) continue 2;
+        if ($p1_cost > $p1_best_cost && $p2_cost > $p2_best_cost) continue 2;
     }
-    $best_cost = $cost;
-    $best_pos = $hpos_a;
+    $p1_best_cost = min($p1_best_cost, $p1_cost);
+    $p2_best_cost = min($p2_best_cost, $p2_cost);
 }
 
-$p2_cost = $best_cost;
-
-echo "p1:{$p1_cost} p2:{$p2_cost}\n";
+echo "p1:{$p1_best_cost} p2:{$p2_best_cost}\n";
