@@ -3,32 +3,27 @@
 $inputs = trim(file_get_contents($argv[1]));
 $inputs = explode(',', $inputs);
 
+// map the count at each pos
+// [hpos => num]
 $crabs_at_hpos = [];
-
-$total_crabs = 0;
 foreach ($inputs as $hpos) {
     $crabs_at_hpos[$hpos] = ($crabs_at_hpos[$hpos]??0) + 1;
-    $total_crabs++;
 }
 
-uksort(
-    $crabs_at_hpos,
-    function ($hpos_a, $hpos_b) use ($crabs_at_hpos) {
-        // sort first in descending qty
-        $cmpdist = $crabs_at_hpos[$hpos_b] <=> $crabs_at_hpos[$hpos_a];
-        // if eq, then sort in ascending horizontal pos
-        if ($cmpdist === 0) {
-            return $hpos_a <=> $hpos_b;
-        }
-        return $cmpdist;
+// reverse sort the map by counts (e.g. in example 2 would be the first key)
+arsort($crabs_at_hpos);
+
+$best_cost = PHP_INT_MAX;
+$best_pos = -1;
+
+foreach ($crabs_at_hpos as $hpos_a => $_) {
+    $cost = 0;
+    foreach ($crabs_at_hpos as $hpos_b => $num) {
+        $cost += abs($hpos_b - $hpos_a) * $num;
+        if ($cost > $best_cost) continue 2;
     }
-);
-
-$fuel = 0;
-$focus = -1;
-foreach ($crabs_at_hpos as $hpos => $num_crabs) {
-    if ($focus === -1) $focus = $hpos;
-    $fuel += abs($hpos - $focus) * $num_crabs;
+    $best_cost = $cost;
+    $best_pos = $hpos_a;
 }
 
-echo $fuel;
+echo $best_cost;
