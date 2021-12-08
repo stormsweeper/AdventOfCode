@@ -58,50 +58,52 @@ function check_masks(string $sorted, array $scan): int {
     return -1;
 }
 
-function decode_code(array &$decoded, array &$scan, string $code): int {
+function decode_code(array &$scan, string $code): int {
     $sorted = sort_str($code);
 
-    if (isset($decoded_codes[$sorted])) {
-        return $decoded_codes[$sorted];
-    }
+    $found = array_search($sorted, $scan);
+    if ($found !== false) return $found;
 
     $len = strlen($code);
     // check known lens, if found return the int
     if (isset(UNIQUE_LENGTHS[$len])) {
         $val = UNIQUE_LENGTHS[$len];
         $scan[$val] = $sorted;
-        return $decoded_codes[$sorted] = $val;
+        return $val;
     }
 
     // check masks
     $val = check_masks($sorted, $scan);
     if ($val !== -1) {
         $scan[$val] = $sorted;
-        return $decoded_codes[$sorted] = $val;
+        return $val;
     }
 
     return -1;
 }
 
 function decode_line(string $line): int {
-    $decoded = $unscrambled = [];
+    $unscrambled = [];
     $scan = [];
     $scrambled = preg_split('/\W+/', $line);
     $scrambled = array_map('sort_str', $scrambled);
     $outputs = array_slice($scrambled, -4);
     usort($scrambled, function($a,$b) {return strlen($a) <=> strlen($b);});
+    $scrambled = array_unique($scrambled);
 
     $i = 0;
     while (array_diff($outputs, $scan)) {
         $i++;
         foreach ($scrambled as $code) {
-            decode_code($decoded, $scan, $code);
+            decode_code($scan, $code);
         }
         $scrambled = array_diff($scrambled, $scan);
     }
+
     $result = 0;
+    $decoded = array_flip($scan);
     foreach ($outputs as $i => $code) {
-        $result += decode_code($decoded, $scan, $code) * pow(10, 3-$i);
+        $result += $decoded[$code] * pow(10, 3-$i);
     }
     return $result;
 }
