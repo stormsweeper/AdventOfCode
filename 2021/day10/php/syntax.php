@@ -7,19 +7,6 @@ define('VALID_CHUNKS', ['[]','{}','()','<>']);
 define('INVALID_SCORES', [')'=>3, ']'=>57, '}'=>1197, '>'=>25137]);
 define('INC_SCORES', ['('=>1, '['=>2, '{'=>3, '<'=>4]);
 
-function score_invalid(string $line): int {
-    $replaced = 0;
-    do {
-        $line = str_replace(VALID_CHUNKS, '', $line, $replaced);
-    }
-    while ($replaced > 0);
-    if ($line === '') return 0;
-    if (preg_match('/[\[(<{][\])>}]/', $line, $m)) {
-        return INVALID_SCORES[$m[0][1]];
-    }
-    return 0;
-}
-
 $invalid_score = 0;
 $inc_scores = [];
 foreach ($inputs as $line) {
