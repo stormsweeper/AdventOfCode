@@ -44,7 +44,10 @@ for ($step = 1; $step <= $max_steps; $step++) {
         }
     }
     // p2 
-    if ($all_flashed === 0 && count($flashed) === 100) $all_flashed = $step;
+    if ($all_flashed === 0 && count($flashed) === 100) {
+        $all_flashed = $step;
+        break;
+    }
     $total_flashes += count($flashed);
     foreach ($flashed as $f => $_) $octopi[$f] = 0;
 }
