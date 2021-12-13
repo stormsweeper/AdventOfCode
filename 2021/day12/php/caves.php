@@ -3,6 +3,8 @@
 $inputs = trim(file_get_contents($argv[1]));
 $inputs = explode("\n", $inputs);
 
+$allow_second_look = ($argv[2]??'') === 'true';
+
 function is_little(string $cave): bool {
     return strtolower($cave) === $cave;
 }
@@ -16,20 +18,27 @@ foreach ($inputs as $line) {
     $cave_passages[$b][$a] = $a;
 }
 
-function num_routes(string $cave, array $visited = []): int {
+function num_routes(string $cave, array $visited = [], bool $allow_second_look = false, bool $had_second_look = false): int {
     global $cave_passages;
 
-    if ($cave === 'end') return 1;
-    if (isset($visited[$cave])) return 0;
+    if (isset($visited[$cave])) {
+        if (!$allow_second_look || $had_second_look) return 0;
+        $had_second_look = true;
+    }
 
     if (is_little($cave)) $visited[$cave] = true;
 
     $routes = 0;
     foreach ($cave_passages[$cave]??[] as $exit) {
-        $routes += num_routes($exit, $visited);
+        if ($exit === 'start') continue;
+        if ($exit === 'end') {
+            $routes++;
+            continue;
+        }
+        $routes += num_routes($exit, $visited, $allow_second_look, $had_second_look);
     }
     return $routes;
 }
 
-echo num_routes('start');
+echo num_routes('start', [], $allow_second_look);
 
