@@ -8,26 +8,34 @@ $max_steps = intval($argv[2]??10);
 $reactions = [];
 preg_match_all('/([A-Z])([A-Z]) -> ([A-Z])/', $inputs, $match_sets, PREG_SET_ORDER);
 foreach ($match_sets as list(, $a, $b, $c)) {
-    $reactions["{$a}{$b}"] = "{$a}{$c}{$b}";
+    $reactions["{$a}{$b}"] = ["{$a}{$c}", "{$c}{$b}"];
 }
 
+
+$rcounts = [];
+$max = strlen($polymer);
+$first_el = $polymer[0];
+$last_el = substr($polymer, -1);
+for ($i = 0; $i < $max - 1; $i++) {
+    $reagents = substr($polymer, $i, 2);
+    $rcounts[$reagents] = ($rcounts[$reagents]??0) + 1;
+}
 
 for ($step = 1; $step <= $max_steps; $step++) {
-    $next = '';
-    $chainlen = strlen($polymer);
-    for ($i = 0; $i < $chainlen - 1; $i++) {
-        $from = substr($polymer, $i, 2);
-        $next = substr($next, 0, -1) . $reactions[$from];
+    $next = [];
+    foreach ($rcounts as $r => $count) {
+        $k = $reactions[$r];
+        $next[$k[0]] = ($next[$k[0]]??0) + $count;
+        $next[$k[1]] = ($next[$k[1]]??0) + $count;
     }
-    $polymer = $next;
+    $rcounts = $next;
 }
 
-// 1 here only keeps chars > 0, vs all ASCII
-$min = PHP_INT_MAX; $max = 0;
-foreach (count_chars($polymer, 1) as $count) {
-    $min = min($min, $count);
-    $max = max($max, $count);
+$ecounts = [$first_el => 1, $last_el => 1];
+
+foreach ($rcounts as $r => $count) {
+    $ecounts[$r[0]] = ($ecounts[$r[0]]??0) + $count;
+    $ecounts[$r[1]] = ($ecounts[$r[1]]??0) + $count;
 }
 
-echo $max - $min;
-
+echo (max($ecounts) - min($ecounts))/2;
