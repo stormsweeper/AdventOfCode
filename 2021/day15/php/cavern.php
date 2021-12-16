@@ -12,6 +12,25 @@ define('CAVERN_LENGTH', SCAN_LENGTH * $grid_multi);
 
 $scan = implode('', $scan);
 
+class CavernNode {
+    // manhattan distance to end
+    private $end_dist = 0;
+
+    public function __construct(public string $key, public float $risk) {
+        [$x, $y] = key2pos($key);
+        $this->end_dist = (CAVERN_WIDTH - 1 - $x) + (CAVERN_LENGTH - 1 - $y);
+    }
+
+    public function weight(): float {
+        return $this->risk + $this->end_dist;
+    }
+}
+
+function sortNodes(CavernNode $a, CavernNode $b): int {
+    // reverse sorting as pop is faster than shift
+    return $b->weight() <=> $a->weight();
+}
+
 function risklevel(string $pos): int {
     global $scan;
     [$x, $y] = key2pos($pos);
@@ -20,7 +39,8 @@ function risklevel(string $pos): int {
     $r = $scan[scanpos2i($sx,$sy)];
     $r += floor($x/SCAN_WIDTH);
     $r += floor($y/SCAN_LENGTH);
-    return $r % 10;
+    while ($r > 9) $r -= 9;
+    return $r;
 }
 
 function scanpos2i(int $x, int $y): string {
@@ -49,32 +69,39 @@ function adj(string $pos): array {
     return $adj;
 }
 
-$start = pos2key(0, 0);
-$end   = pos2key(CAVERN_WIDTH - 1, CAVERN_LENGTH - 1);
-
-$shortest = [];
-$visited = [];
-$consider = [0];
-$queue = new SplPriorityQueue();
-$queue->insert([$start, 0], PHP_INT_MAX);
-$i = 0;
-while (!isset($visited[$end]) || $queue->valid()) {
-    [$node, $risk] = $queue->extract();
-
-    // mark as visited
-    $visited[$node] = 1;
-    $next = [];
-    foreach (adj($node) as $adj) {
-        if (isset($visited[$adj])) continue;
-        $adjrisk = $risk + risklevel($adj);
-        $next[$adj] = min($adjrisk, $next[$adj]??PHP_INT_MAX);
-    }
-    foreach ($next as $n => $r) {
-        $shortest[$n] = min($r, $shortest[$n]??PHP_INT_MAX);
-        $queue->insert([$n, $r], PHP_INT_MAX - $r);
-    }
+function priority(string $frompos, string $topos): int {
+    global $shortest;
+    [$to_x, $to_y] = pos2key($topos);
+    $manhattan = (CAVERN_WIDTH - 1 - $to_x) + (CAVERN_LENGTH - 1 - $to_y);
 }
 
-// ksort($shortest);
-// print_r($shortest);
-echo $shortest[$end];
+$start = new CavernNode(pos2key(0, 0), 0);
+$end   = new CavernNode(pos2key(CAVERN_WIDTH - 1, CAVERN_LENGTH - 1), INF);
+
+$visited = [];
+$consider = [
+    $start->key => $start,
+    $end->key   => $end,
+];
+
+do {
+    uasort($consider, 'sortNodes');
+
+    // get the shortest node/path, then get neighbors
+    $node = array_pop($consider);
+
+    // check risks for all neighbors
+    foreach (adj($node->key) as $adj) {
+        // if we already cleared the node, skip on
+        if (isset($visited[$adj])) continue;
+
+        $consider[$adj] = $consider[$adj] ?? new CavernNode($adj, INF);
+        
+        $consider[$adj]->risk = min($consider[$adj]->risk, $node->risk + risklevel($adj));
+    }
+
+    // mark as visited
+    $visited[$node->key] = $node->risk;
+} while ($consider);
+
+echo $end->risk;
