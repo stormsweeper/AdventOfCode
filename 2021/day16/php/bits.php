@@ -114,6 +114,31 @@ class BITSPacket {
         }
         return $total;
     }
+
+    public function value(): int {
+        if ($this->isLiteral()) return bindec($this->payload);
+
+        $pvalues = [];
+        foreach ($this->payload as $p) $pvalues[] = $p->value();
+
+        switch ($this->type) {
+            // sum
+            case 0: return array_sum($pvalues);
+            // product
+            case 1: return array_product($pvalues);
+            // min
+            case 2: return min($pvalues);
+            // max
+            case 3: return max($pvalues);
+            // gt
+            case 5: return $pvalues[0] > $pvalues[1] ? 1 : 0;
+            // lt
+            case 6: return $pvalues[0] < $pvalues[1] ? 1 : 0;
+            // eq
+            case 7: return $pvalues[0] === $pvalues[1] ? 1 : 0;
+        }
+        return -1;
+    }
 }
 
 
@@ -129,10 +154,17 @@ class BITSPacket {
 // // first sum example, should be 16
 // $hex = '8A004A801A8002F478';
 
+// // C200B40A82 finds the sum of 1 and 2, resulting in the value 3.
+// $hex = 'C200B40A82';
+
 $hex = trim(file_get_contents($argv[1]));
 
 $stream = new BITSStream($hex);
 
 $packet = $stream->nextPacket();
 
-echo $packet->versionSum();
+$p1 = $packet->versionSum();
+
+$p2 = $packet->value();
+
+echo "p1:{$p1} p2:{$p2}\n";
