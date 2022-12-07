@@ -69,4 +69,16 @@ $candidates = array_filter(
     function($dsize) { return $dsize <= 100000;}
 );
 
-echo array_sum($candidates);
+$p1 = array_sum($candidates);
+
+// p2
+$p2 = -1;
+$need = 30000000 - (70000000 - $dirs['/']);
+$candidates =  array_filter(
+    $dirs,
+    function($dsize) use ($need) { return $dsize >= $need;}
+);
+asort($candidates);
+$p2 = array_shift($candidates);
+
+echo "p1: {$p1} p2: {$p2}\n";
