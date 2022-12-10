@@ -5,9 +5,9 @@ $width = strpos($trees, "\n");
 $trees = str_replace("\n", '', $trees);
 $trees = array_map('intval', str_split($trees));
 $grid_size = count($trees);
-$height = $grid_size / $width;
+$length = $grid_size / $width;
 $max_x = $width - 1;
-$max_y = $height - 1;
+$max_y = $length - 1;
 
 $visible = [];
 
@@ -20,7 +20,7 @@ function i2pos(int $i): array {
     return [$i%$width, floor($i/$width)];
 }
 
-$edge_trees = 2 * ($width + $height - 2);
+$edge_trees = 2 * ($width + $length - 2);
 
 // up/down
 for ($x = 1; $x < $max_x; $x++) {
@@ -72,4 +72,42 @@ for ($y = 1; $y < $max_y; $y++) {
 
 $p1 = count($visible) + $edge_trees;
 
-echo $p1;
+echo "p1: {$p1}\n";
+
+// p2, just brute forcing it
+$max_scenic = 0;
+foreach ($trees as $i => $height) {
+    [$x, $y] = i2pos($i);
+    if ($x === 0 || $x === $max_x || $y === 0 || $y === $max_y) {
+        // presumably not going to make the cut
+        continue;
+    }
+
+    $up = $down = $left = $right = 0;
+
+    $uy = $y;
+    while ($uy-- > 0) {
+        $up++;
+        if ($trees[pos2i($x, $uy)] >= $height) break;
+    }
+    $dy = $y;
+    while ($dy++ < $max_y) {
+        $down++;
+        if ($trees[pos2i($x, $dy)] >= $height) break;
+    }
+    $lx = $x;
+    while ($lx-- > 0) {
+        $left++;
+        if ($trees[pos2i($lx, $y)] >= $height) break;
+    }
+    $rx = $x;
+    while ($rx++ < $max_x) {
+        $right++;
+        if ($trees[pos2i($rx, $y)] >= $height) break;
+    }
+
+    $scenic = $up * $down * $left * $right;
+    $max_scenic = max($max_scenic, $scenic);
+}
+
+echo "p2: {$max_scenic}\n";
