@@ -7,30 +7,30 @@ function key2pos(string $key): array {
     list($x,$y) = explode(',', $key);
     return [intval($x), intval($y)];
 }
-function manhattanDistance(int $x1, int $y1, int $x2, int $y2): int {
-    return abs($x1 - $x2) + abs($y1 - $y2);
-}
 
-$head_x = $head_y = $tail_x = $tail_y = 0;
-$head_visited = $tail_visited = [];
+$num_knots = intval($argv[2]??2);
+$knots = array_fill(0, $num_knots, [0,0]);
+
+$tail_visited = [];
 
 function move_head(int $dx, int $dy): void {
-    global $head_x, $head_y, $tail_x, $tail_y, $tail_visited;
-    $head_x += $dx; $head_y += $dy;
-    // work out tail move
-    $x_dist = $head_x - $tail_x;
-    $y_dist = $head_y - $tail_y;
-    if (abs($x_dist) > 1 || abs($y_dist) > 1) {
-        // not touching
-        if ($y_dist < 0) $tail_y--;
-        if ($y_dist > 0) $tail_y++;
-        if ($x_dist < 0) $tail_x--;
-        if ($x_dist > 0) $tail_x++;
+    global $num_knots, $knots, $tail_visited;
+    $knots[0][0] += $dx; $knots[0][1] += $dy;
+    // work out next move
+    for ($k = 1; $k < $num_knots; $k++) {
+        $x_dist = $knots[$k - 1][0] - $knots[$k][0];
+        $y_dist = $knots[$k - 1][1] - $knots[$k][1];
+        if (abs($x_dist) > 1 || abs($y_dist) > 1) {
+            // not touching
+            if ($y_dist < 0) $knots[$k][1]--;
+            if ($y_dist > 0) $knots[$k][1]++;
+            if ($x_dist < 0) $knots[$k][0]--;
+            if ($x_dist > 0) $knots[$k][0]++;
+        }
     }
-    $hk = pos2key($head_x, $head_y);
-    $head_visited[$hk] = $head_visited[$hk]??0 + 1;
-    $tk = pos2key($tail_x, $tail_y);
-    $tail_visited[$tk] = $tail_visited[$tk]??0 + 1;
+    $tail = $k - 1;
+    $tk = pos2key($knots[$tail][0], $knots[$tail][1]);
+    $tail_visited[$tk] = true;
 }
 move_head(0, 0);
 
