@@ -44,12 +44,13 @@ class LocNode {
     function __construct(public int $i, public int $dist) {}
 }
 
-$end_node = new LocNode($end_i, PHP_INT_MAX);
+// working backwards
 $consider = [
-    $start_i => new LocNode($start_i, 0),
-    $end_i   => $end_node,
+    $start_i => new LocNode($start_i, PHP_INT_MAX),
+    $end_i   => new LocNode($end_i, 0),
 ];
 $visited = [];
+$lowest = [];
 
 while ($consider) {
     uasort(
@@ -64,8 +65,8 @@ while ($consider) {
         // if we already cleared the node, skip on
         if (isset($visited[$adj])) continue;
 
-        // skip if too high
-        if ($height_map[$adj] - $height_map[$node->i] > 1) continue;
+        // skip if too low (again, going backwards)
+        if ($height_map[$adj] - $height_map[$node->i] < -1) continue;
 
         if (!isset($consider[$adj])) {
             $consider[$adj] = new LocNode($adj, $node->dist + 1);
@@ -75,6 +76,12 @@ while ($consider) {
         }
     }
     $visited[$node->i] = true;
+    if ($height_map[$node->i] === 0) {
+        $lowest[$node->i] = $node->dist;
+    }
 }
 
-echo $end_node->dist;
+$orig = $lowest[$start_i];
+$min = min($lowest);
+
+echo "orig: {$orig} lowest: {$min}\n";
