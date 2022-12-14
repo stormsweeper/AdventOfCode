@@ -12,7 +12,8 @@ function block_node(int $x, int $y, string $type): void {
     $blocked[$x][$y] = $type;
 }
 function blocking_node(int $x, int $y): string|false {
-    global $blocked;
+    global $blocked, $max_y;
+    if ($y === $max_y + 2) return ROCK;
     return $blocked[$x][$y]??false;
 }
 function is_blocked(int $x, int $y): bool {
@@ -24,8 +25,8 @@ function is_abyss(int $x, int $y): bool {
     return $y >= PHP_INT_MAX || !isset($blocked[$x]) || blocking_node($x, $y) === ABYSS;
 }
 function drop_point_y(int $x, int $y): int {
-    global $blocked;
-    $dpy = PHP_INT_MAX;
+    global $blocked, $max_y;
+    $dpy = $max_y + 1;
     foreach ($blocked[$x]??[] as $dy => $_) {
         if ($dy > $y) $dpy = min($dpy, $dy - 1);
     }
@@ -77,18 +78,16 @@ while (($rocks = fgets($scan)) !== false) {
 
 // drop some sand
 $settled_sand = 0;
+$floor_y = $max_y + 1;
+$before_floor = 0;
+$hit_floor = false;
 
-while ($settled_sand < 1000) {
+while (!is_blocked($drop_start_x, 0)) {
     $sand_x = $drop_start_x;
     $sand_y = 0;
     while (true) {
-        // fall to oblivion?
-        if (is_abyss($sand_x, $sand_y)) {
-            //echo "is abyss?\n";
-            break 2;
-        }
         // drop down
-        elseif (!is_blocked($sand_x, $sand_y + 1)) {
+        if (!is_blocked($sand_x, $sand_y + 1)) {
             //echo "can go down?\n";
             $sand_y = drop_point_y($sand_x, $sand_y);
             continue;
@@ -109,9 +108,11 @@ while ($settled_sand < 1000) {
         }
         //echo "hmm {$sand_x} {$sand_y}\n";
         block_node($sand_x, $sand_y, SAND);
+        $hit_floor = $hit_floor || $sand_y >= $max_y;
+        if (!$hit_floor) $before_floor++;
         $settled_sand++;
         break;
     }
 }
 
-echo $settled_sand;
+echo "p1: {$before_floor} p2: {$settled_sand}\n";
