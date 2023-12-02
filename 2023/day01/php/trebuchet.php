@@ -2,7 +2,7 @@
 
 $calibrations = fopen($argv[1], 'r');
 
-$use_words = !empty($argv[2]);
+$use_words = boolval($argv[2]??false);
 
 
 $total = 0;
