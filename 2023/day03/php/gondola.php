@@ -1,11 +1,8 @@
 <?php
 
 $schematic = explode("\n", trim(file_get_contents($argv[1])));
-// these are equal in inputs, but not relying on that
+
 $width = strlen($schematic[0]);
-$height = count($schematic);
-$max_x = $width - 1;
-$max_y = $height - 1;
 
 $sum = 0;
 $gear_sum = 0;
@@ -16,13 +13,11 @@ function read_schematic(int $x, int $y): string {
 }
 
 function is_symbol(int $x, int $y): bool {
-    global $schematic;
     $spot = read_schematic($x, $y);
     return $spot !== '.' && !is_numeric($spot);
 }
 
 function is_part_digit(int $x, int $y): bool {
-    global $schematic;
     return 
         is_symbol($x - 1, $y) || is_symbol($x + 1, $y) || is_symbol($x, $y - 1) || is_symbol($x, $y + 1) || 
         is_symbol($x - 1, $y - 1) || is_symbol($x + 1, $y + 1) || is_symbol($x - 1, $y + 1) || is_symbol($x + 1, $y - 1)
@@ -66,7 +61,7 @@ function gear_ratio(int $x, int $y): int {
     return array_product($gears);
 }
 
-for ($y = 0; $y < $height; $y++) {
+foreach (array_keys($schematic) as $y) {
     $current_number = 0;
     $is_part_num = false;
     for ($x = 0; $x < $width; $x++) {
