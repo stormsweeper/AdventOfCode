@@ -8,19 +8,26 @@ function parse_nums(string $nums): array {
     return array_values(array_map('intval', explode(' ', $nums)));
 }
 
-function next_val(array $reading, int $depth = 0): int {
+function outer_vals(array $reading, int $depth = 0): array {
     // echo json_encode($reading) . "\n";
-    if (count(array_unique($reading)) === 1) return $reading[0];
-    $next = [];
+    if (count(array_unique($reading)) === 1) return [$reading[0], $reading[0]];
+    $lower = [];
     for ($i = 1; $i < count($reading); $i++) {
-        $next[] = $reading[$i] - $reading[$i - 1];
+        $lower[] = $reading[$i] - $reading[$i - 1];
     }
-    $next_val = $reading[$i - 1] + next_val($next, $depth + 1);
-    // echo "next: {$next_val}\n\n";
-    return $next_val;
+    [$lower_prev, $lower_next] = outer_vals($lower, $depth + 1);
+    $prev_val = $reading[0] - $lower_prev;
+    $next_val = $reading[$i - 1] + $lower_next;
+    // echo "next: {$lower_val}\n\n";
+    return [$prev_val, $next_val];
 }
 
-$sum = array_sum(array_map('next_val', $readings));
+$sum_prev = $sum_next = 0;
+foreach ($readings as $reading) {
+    [$prev, $next] = outer_vals($reading);
+    $sum_prev += $prev;
+    $sum_next += $next;
+}
 
-echo "p1: {$sum}\n";
+echo "p1: {$sum_next}\np2: {$sum_prev}\n";
 
