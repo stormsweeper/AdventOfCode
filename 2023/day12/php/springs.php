@@ -5,10 +5,13 @@ $records = explode("\n", $records);
 
 $unfold = boolval($argv[2] ?? 0);
 
-function check_scan(string $scan, string $pattern): int {
+function check_scan(string $scan, array $pattern): int {
     $first_unknown = strpos($scan, '?');
     // no unknowns
-    if ($first_unknown === false) return (int)preg_match($pattern, $scan);
+    if ($first_unknown === false) {
+        $scan = preg_split('/\.+/', $scan, -1, PREG_SPLIT_NO_EMPTY);
+        return $scan === $pattern ? 1 : 0;
+    }
 
     // map the first ?
     $a = $b = $scan;
@@ -24,10 +27,12 @@ function possible(string $record, bool $unfold): int {
         $counts = implode(',', array_fill(0, 5, $counts));
     }
 
-    // yes, I'm dynamically making a regex pattern
-    $counts_regex = '/^[.]*#{' . str_replace(',', '}[.]+#{', $counts) . '}[.]*$/';
+    $counts = array_map(
+        function($c) { return str_repeat('#', $c); },
+        json_decode("[{$counts}]")
+    );
 
-    return check_scan($scan, $counts_regex);
+    return check_scan($scan, $counts);
 }
 
 $valid = 0;
