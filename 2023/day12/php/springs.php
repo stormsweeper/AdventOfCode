@@ -13,6 +13,20 @@ function check_scan(string $scan, array $pattern): int {
         return $scan === $pattern ? 1 : 0;
     }
 
+    // check if if works so far
+    $left_scan = substr($scan, 0, 0-$first_unknown);
+    if (strlen($left_scan) >= strlen($pattern[0])) {
+        preg_match_all('/(?<=\.)#+(?=\.)/', $left_scan, $matches);
+        // echo "{$left_scan}\t";
+        // echo json_encode($matches[0]) . "\t";
+        // echo json_encode($pattern) . "\n";
+        if (array_diff($matches[0], $pattern)) {
+            // echo "should skip...\n";
+            return 0;
+        }
+    }
+
+    // echo "continuining...\n";
     // map the first ?
     $a = $b = $scan;
     $a[$first_unknown] = '#';
