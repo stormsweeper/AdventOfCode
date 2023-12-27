@@ -64,17 +64,35 @@ function feature_at(int $x, int $y): string {
     return $cavern[$y][$x];
 }
 
-$energized = [];
-$start = Photon::create(0, 0, 'R');
-$consider = [$start->hashkey() => $start];
-$visited = [];
-while ($consider) {
-    $photon = array_pop($consider);
-    $energized[$photon->poskey()] = $energized[$photon->poskey()]??0 + 1;
-    foreach ($photon->next() as $n) {
-        if (!isset($visited[$n->hashkey()])) $consider[$n->hashkey()] = $n;
+function calc_energized(Photon $start): int {
+    $energized = [];
+    $consider = [$start->hashkey() => $start];
+    $visited = [];
+
+    while ($consider) {
+        $photon = array_pop($consider);
+        $energized[$photon->poskey()] = 1;
+        foreach ($photon->next() as $n) {
+            if (!isset($visited[$n->hashkey()])) $consider[$n->hashkey()] = $n;
+        }
+        $visited[$n->hashkey()] = $n;
     }
-    $visited[$n->hashkey()] = $n;
+
+    return count($energized);
 }
 
-echo count($energized);
+$p1 = calc_energized(Photon::create(0, 0, 'R'));
+
+echo "p1: {$p1}\n";
+
+$max = 0;
+for ($x = 0; $x < $width; $x++) {
+    $max = max($max, calc_energized(Photon::create($x, 0, 'D')));
+    $max = max($max, calc_energized(Photon::create($x, $height - 1, 'U')));
+}
+for ($y = 0; $y < $height; $y++) {
+    $max = max($max, calc_energized(Photon::create(0, $y, 'R')));
+    $max = max($max, calc_energized(Photon::create($width - 1, $y, 'L')));
+}
+
+echo "p2: {$max}\n";
