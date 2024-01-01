@@ -4,10 +4,14 @@ $city = explode("\n", trim(file_get_contents($argv[1])));
 $max_y = count($city) - 1;
 $max_x = strlen($city[0]) - 1;
 
+define('MIN_PUSHES', intval($argv[2]??1));
+define('MAX_PUSHES', intval($argv[3]??3));
+
 function is_oob(int $x, int $y): bool {
     global $max_x, $max_y;
     return $x < 0 || $x > $max_x || $y < 0 || $y > $max_y;
 }
+
 function heat_loss_at(int $x, int $y): int {
     global $city;
     if (is_oob($x, $y)) return -1;
@@ -15,7 +19,6 @@ function heat_loss_at(int $x, int $y): int {
 }
 
 class Crucible {
-    const MAX_PUSHES = 3;
 
     static function create(int $x, int $y, string $dir, int $heat_loss, int $pushes): ?Crucible {
         if (is_oob($x, $y)) return null;
@@ -34,10 +37,13 @@ class Crucible {
 
     function weight(): int {
         global $max_x, $max_y;
-        // heat loss + 5 * manhattan distance from start
-        $heuristic = 5*($this->x + $this->y);
+        // manhattan distance from end
+        $heuristic = 1 * ($max_x - $this->x + $max_y - $this->y);
         return $this->heat_loss + $heuristic;
     }
+
+    function mayProceed(): bool { return $this->pushes < MAX_PUSHES; }
+    function mayTurn(): bool { return $this->pushes >= MIN_PUSHES; }
 
     function isAtEnd(): bool {
         global $max_x, $max_y;
@@ -45,7 +51,7 @@ class Crucible {
     }
 
     function forward(): ?Crucible {
-        if ($this->pushes >= self::MAX_PUSHES) return null;
+        if (!$this->mayProceed()) return null;
         $new_x = $this->x; $new_y = $this->y;
         if ($this->dir === 'U') $new_y--;
         if ($this->dir === 'D') $new_y++;
@@ -56,6 +62,7 @@ class Crucible {
         return self::create( $new_x, $new_y, $this->dir, $new_heat_loss, $this->pushes + 1); 
     }
     function left():  ?Crucible {
+        if (!$this->mayTurn()) return null;
         $new_x = $this->x; $new_y = $this->y;
         if ($this->dir === 'U') { $new_x--; $new_dir = 'L'; }
         if ($this->dir === 'D') { $new_x++; $new_dir = 'R'; }
@@ -66,6 +73,7 @@ class Crucible {
         return self::create( $new_x, $new_y, $new_dir, $new_heat_loss, 1); 
     }
     function right(): ?Crucible {
+        if (!$this->mayTurn()) return null;
         $new_x = $this->x; $new_y = $this->y;
         if ($this->dir === 'U') { $new_x++; $new_dir = 'R'; }
         if ($this->dir === 'D') { $new_x--; $new_dir = 'L'; }
