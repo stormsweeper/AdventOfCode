@@ -30,12 +30,13 @@ class Crucible {
         public int $x, public int $y, public string $dir, public int $heat_loss, public int $pushes
     ) {}
 
-    function hashkey(): string { return "{$this->x},{$this->y};{$this->dir}"; }
+    function hashkey(): string { return "{$this->x},{$this->y};{$this->dir};{$this->pushes}"; }
 
     function weight(): int {
         global $max_x, $max_y;
-        // heat loss + pyth distance to end
-        return $this->heat_loss;
+        // heat loss + 5 * manhattan distance from start
+        $heuristic = 5*($this->x + $this->y);
+        return $this->heat_loss + $heuristic;
     }
 
     function isAtEnd(): bool {
@@ -80,15 +81,10 @@ class Crucible {
 
 $consider = $visited = [];
 
-// $start_down = Crucible::create(0, 0, 'D', 0, 0);
-// $consider[$start_down->hashkey()] = $start_down;
+$start_down = Crucible::create(0, 0, 'D', 0, 0);
+$consider[$start_down->hashkey()] = $start_down;
 $start_right = Crucible::create(0, 0, 'R', 0, 0);
 $consider[$start_right->hashkey()] = $start_right;
-
-// $end_down = Crucible::create($max_x, $max_y, 'D', PHP_INT_MAX, 4);
-// $consider[$end_down->hashkey()] = $end_down;
-// $end_right = Crucible::create($max_x, $max_y, 'R', PHP_INT_MAX, 4);
-// $consider[$end_right->hashkey()] = $end_right;
 
 $min_heat_loss = PHP_INT_MAX;
 do {
