@@ -4,20 +4,23 @@ $input = fopen($argv[1], 'r');
 
 $left = $right = [];
 
-$num_safe = 0;
+$num_safe = $with_dampening = 0;
 while (($line = fgets($input)) !== false) {
     $report = array_map('intval', explode(' ', $line));
-    // echo json_encode($report) . "\n";
-    if ( (increasing($report) || decreasing($report)) && in_range($report) ) {
-        // echo "safe\n";
+    if (is_safe($report)) {
         $num_safe++;
-    } else {
-        // echo "unsafe\n";
+        $with_dampening++;
+    } elseif (safe_with_dampening($report)) {
+        $with_dampening++;
     }
 }
 
 echo "p1: {$num_safe}\n";
+echo "p1: {$with_dampening}\n";
 
+function is_safe(array $report): bool {
+    return (increasing($report) || decreasing($report)) && in_range($report);
+}
 
 function increasing(array $report): bool {
     $last = 0;
@@ -43,4 +46,14 @@ function in_range(array $report): bool {
         if ($diff < 1 || $diff > 3) return false;
     }
     return true;
+}
+
+function safe_with_dampening(array $report): bool {
+    for ($i = 0; $i < count($report); $i++) {
+        $copy = $report;
+        unset($copy[$i]);
+        $copy = array_values($copy);
+        if (is_safe($copy)) return true;
+    }
+    return false;
 }
