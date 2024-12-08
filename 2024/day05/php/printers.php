@@ -10,12 +10,26 @@ foreach (explode("\n", $rules_input) as $rule) {
 }
 
 $p1 = 0;
+$p2 = 0;
 foreach (explode("\n", $updates) as $update) {
     $update = array_map('intval', explode(',', $update));
-    if (is_correct($update, $rules)) $p1 += middle_val($update);
+    if (is_correct($update, $rules)) {
+        $p1 += middle_val($update);
+    } else {
+        usort(
+            $update,
+            function($a, $b) use ($rules) {
+                if (isset($rules[$a][$b])) return 1;
+                if (isset($rules[$b][$a])) return -1;
+                return 0;
+            }
+        );
+        $p2 += middle_val($update);
+    }
 }
 
 echo "p1: {$p1}\n";
+echo "p2: {$p2}\n";
 
 function is_correct(array $update, array $rules): bool {
     $len = count($update);
