@@ -11,15 +11,7 @@ $ranges = array_map(
 );
 
 function p1_invalid(int $num): bool {
-    $str = strval($num);
-    $len = strlen($str);
-
-    if ($len%2 !== 0) return false;
-
-    $a = substr($str, 0, $len/2);
-    $b = substr($str, $len/2);
-    // echo "$a $b\n";exit();
-    return $a === $b;
+    return preg_match('/^(\d+)\1$/', strval($num));
 }
 
 function p2_invalid(int $num): bool {
