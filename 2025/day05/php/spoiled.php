@@ -23,7 +23,7 @@ usort(
 $compacted = [];
 foreach ($fresh_ranges as [$min, $max]) {
     for ($i = 0; $i < count($compacted); $i++) {
-        if ($min >= $compacted[$i][0] && $min <= $compacted[$i][1]) {
+        if ($min >= $compacted[$i][0] && $min <= $compacted[$i][1] + 1) {
             $compacted[$i][1] = max($compacted[$i][1], $max);
             continue 2;
         }
@@ -50,4 +50,3 @@ foreach ($compacted as [$min, $max]) {
     $p2 += $max - $min + 1;
 }
 echo "p2: {$p2}\n";
-
